@@ -3,40 +3,40 @@ import { Redirect, Link } from 'react-router-dom'
 
 import { UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton} from './styled-components/FormStyle'
 
-class EmployerForm extends Component {
+class CompanyForm extends Component {
     state = {
-        newUser: {},
+        newCompany: {},
         redirect: false
     }
     handleInputChange = (event) => {
         const attribute = event.target.name
         let value = event.target.value
-        const newUser = {...this.state.newUser}
-        newUser[attribute] = value
-        this.setState({newUser})
+        const newCompany = {...this.state.newCompany}
+        newCompany[attribute] = value
+        this.setState({newCompany})
     }
     resetForm = () => {
-        const newUser = {...this.state.newUser}
-        this.setState({newUser, redirect: true})
+        const newCompany = {...this.state.newCompany}
+        this.setState({newCompany, redirect: true})
     }
-    addNewUser = (event) => {
+    addNewCompany = (event) => {
         event.preventDefault()
-        this.props.addNewUser(this.state.newUser)
+        this.props.addNewCompany(this.state.newCompany)
         this.resetForm()
     }
 
 
-    //REDIRECT TO USERS PAGE
+    //REDIRECT TO CompanyS PAGE
     render() {
         return (
             <UserFormContainer>
 
-                {this.state.redirect ? <Redirect to="/users">Users</Redirect> :
+                {this.state.redirect ? <Redirect to="/companies">Companies</Redirect> :
                 <FormWrapper>
-                      <FormBody onSubmit={this.addNewUser}>
+                      <FormBody onSubmit={this.addNewCompany}>
                     <FormField>
                         <FormHeader>
-                            <FormHeading>New User</FormHeading>
+                            <FormHeading>New Company</FormHeading>
                         </FormHeader>
                         <FormInput
                             type="string"
@@ -44,9 +44,7 @@ class EmployerForm extends Component {
                             placeholder="First Name"
                             onChange={this.handleInputChange} />
                     </FormField>
-
-                    <FormField>
-                        
+                    <FormField> 
                         <FormInput
                             type="string"
                             name="lastName"
@@ -63,17 +61,38 @@ class EmployerForm extends Component {
                     <FormField>
                         <FormInput
                             type="string"
+                            name="organization"
+                            placeholder="Organization"
+                            onChange={this.handleInputChange} />
+                    </FormField>
+                    <FormField>
+                        <FormInput
+                            type="string"
                             name="password"
                             placeholder="Password"
                             onChange={this.handleInputChange} />
                     </FormField>
                     <FormField>
+                        <FormInput
+                            type="string"
+                            name="image"
+                            placeholder="Image"
+                            onChange={this.handleInputChange} />
+                    </FormField>
+                    <textarea>
+                        <FormInput
+                            type="text-area"
+                            name="description"
+                            placeholder="Description"
+                            onChange={this.handleInputChange} />
+                    </textarea>
+                    <FormField>
                         <FormInputButton
                             type="submit"
-                            value="Add New User" />
+                            value="Add New Company" />
                     </FormField>
                     <FormField>
-                    <FormButton><Link to="/users">Cancel</Link></FormButton>
+                    <FormButton><Link to="/companies">Cancel</Link></FormButton>
                     </FormField>
                 </FormBody>
                 </FormWrapper>}
@@ -83,4 +102,4 @@ class EmployerForm extends Component {
     }
 }
 
-export default EmployerForm
+export default CompanyForm
