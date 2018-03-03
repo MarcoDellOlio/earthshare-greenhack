@@ -9,17 +9,14 @@ class NewUser extends Component {
         user: {
         }
     }
-    // handleInputChange = (event) => {
-    //     const attribute = event.target.name
-    //     let value = event.target.value
+    handleInputChange = (event) => {
+        const attribute = event.target.name
+        let value = event.target.value
 
-    //     if (attribute === 'firstName') {
-    //         value = String(value)
-    //     }
-    //     const newUser = { ...this.state.newUser }
-    //     newUser[attribute] = value
-    //     this.setState({ newUser })
-    // }
+        const newUser = { ...this.state.newUser }
+        newUser[attribute] = value
+        this.setState({ newUser })
+    }
     // resetForm = () => {
     //     const newUser = { ...this.defaultState.newUser }
     //     this.setState({ newUser, redirect: true })
@@ -102,6 +99,13 @@ class NewUser extends Component {
                                 type="string"
                                 name="image"
                                 placeholder="Profile Picture"
+                                onChange={this.handleInputChange} />
+                        </field>
+                        <field>
+                            <input
+                                type="string"
+                                name="streetAddress"
+                                placeholder="Street Address"
                                 onChange={this.handleInputChange} />
                         </field>
                         <field>
