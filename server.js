@@ -9,20 +9,28 @@ app.get('/', (req,res) => {
   res.sendFile(__dirname + '/client/build/index.html')
 })
 
-
-
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/idea-board
 
 const connection = mongoose.connection;
 connection.on('connected', () => {
   console.log('Mongoose Connected Successfully');    
-}); 
+})
+
+// CONTROLLERS FOR ROUTES
+const UsersController = require('./routes/users')
+app.use('/api/users', UsersController)
+
+const JobsController = require('./routes/jobs')
+app.use('/api/users/:userId/jobs', JobsController)
+
+const PostsController = require('./routes/posts')
+app.use('/api/users/:userId/posts', PostsController)
 
 // If the connection throws an error
 connection.on('error', (err) => {
   console.log('Mongoose default connection error: ' + err);
-}); 
+})
 
 app.use(bodyParser.json());
 app.get('/', (req,res) => {

@@ -1,5 +1,5 @@
 const express = require('express')
-const User = require('../db/models/User')
+const User = require('../db/models/UserModel')
 
 const router = express.Router()
 
@@ -38,7 +38,7 @@ router.post('/', async (request, response) => {
 router.delete('/:userId', async (request, response) => {
     try {
         await User.findByIdAndRemove(request.params.userId)
-        response.send('completed delete')
+        response.json(user)
     }
     catch (err) {
         console.log(err)
