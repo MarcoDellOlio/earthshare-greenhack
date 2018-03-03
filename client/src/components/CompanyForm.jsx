@@ -3,7 +3,7 @@ import { Redirect, Link } from 'react-router-dom'
 
 import { UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton} from './styled-components/FormStyle'
 
-class EmployerForm extends Component {
+class CompanyForm extends Component {
     state = {
         newCompany: {},
         redirect: false
@@ -102,4 +102,4 @@ class EmployerForm extends Component {
     }
 }
 
-export default EmployerForm
+export default CompanyForm

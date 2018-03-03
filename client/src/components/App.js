@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import EmployerForm from './EmployerForm'
+import CompanyForm from './CompanyForm'
 import JobSeekerForm from './JobSeekerForm'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import JobsList from './JobsList'
@@ -10,7 +10,44 @@ import axios from 'axios'
 class App extends Component {
   state = {
     users: [],
-    companies: []
+    companies: [
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      }
+          ]
   }
 
 
@@ -70,16 +107,16 @@ addNewCompany = async (newCompany) => {
   
   render() {
     const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props}/>)
-    const EmployerFormComponent = (props) => (<EmployerForm addNewCompany={this.addNewCompany}/>)
+    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany}/>)
     const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser}/>)
-    const CompaniesListComponent = (props) => (<CompaniesList />)
+    const CompaniesListComponent = (props) => (<CompaniesList companies = {this.state.companies}/>)
     return (
       <Router>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/jobs" component={JobsListComponent}/>
         <Route exact path="/companies" component={CompaniesListComponent}/>
-        <Route exact path="/companies/new" component={EmployerFormComponent} />
+        <Route exact path="/companies/new" component={CompanyFormComponent} />
         <Route exact path="/job-seeker/new" component={JobSeekerFormComponent} />
       </Switch>
     </Router>
