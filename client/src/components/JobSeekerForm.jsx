@@ -16,7 +16,7 @@ class JobSeekerForm extends Component {
         this.setState({newUser})
     }
     resetForm = () => {
-        const newUser = {...this.defaultState.newUser}
+        const newUser = {...this.state.newUser}
         this.setState({newUser, redirect: true})
     }
     addNewUser = (event) => {
