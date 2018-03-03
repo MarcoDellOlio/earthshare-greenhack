@@ -15,8 +15,8 @@ class App extends Component {
  createUser = async (newUser) => {
 
     try {
-      const res = await axios.post('/api/users', newUser)
-      newUser = res.data
+      // const res = await axios.post('/api/users', newUser)
+      // newUser = res.data
       const updatedUsers = [...this.state.users]
       this.setState({ users: updatedUsers })
     } catch (err) {
@@ -25,17 +25,19 @@ class App extends Component {
   }
 
  addNewUser = async (newUser) => {
-    // try {
-      // await this.createUser(newUser)
+    try {
+      await this.createUser(newUser)
       const users = [...this.state.users]
       users.push(newUser)
       this.setState({ users })
-    // }
-    // catch (err) {
-      // console.log(err)
-    // }
+    }
+    catch (err) {
+      console.log(err)
+    }
 
   }
+
+  
   render() {
     const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props}/>)
     const EmployerFormComponent = (props) => (<EmployerForm addNewUser={this.addNewUser}/>)
@@ -47,7 +49,6 @@ class App extends Component {
         <Route exact path="/jobs" component={JobsListComponent}/>
         <Route exact path="/employer/new" component={EmployerFormComponent} />
         <Route exact path="/job-seeker/new" component={JobSeekerFormComponent} />
-
       </Switch>
     </Router>
     )
