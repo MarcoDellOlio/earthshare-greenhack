@@ -22,10 +22,7 @@ const UsersController = require('./routes/users')
 app.use('/api/users', UsersController)
 
 const JobsController = require('./routes/jobs')
-app.use('/api/users/:userId/jobs', JobsController)
-
-const PostsController = require('./routes/posts')
-app.use('/api/users/:userId/posts', PostsController)
+app.use('/api/jobs', JobsController)
 
 // If the connection throws an error
 connection.on('error', (err) => {
