@@ -8,7 +8,7 @@ const CompaniesIndex = (props) => {
      <div>
         <CompanyContainer>
         <CompanyHeaderContainer>
-            <Link to={`cities/${props.CompanyId}`}>{props.name}</Link>
+            <Link to={`companies/${props.id}`}></Link>
             </CompanyHeaderContainer>
         <CompanyImage src="https://i.imgur.com/RJg1FIv.jpg" alt={props.name}/> 
         </CompanyContainer>
