@@ -1,10 +1,13 @@
 import React from 'react'
 import { EarthShareImage } from './styled-components/Images'
+import NavBar from './NavBar'
 
 const Home = (props) => {
 
     return (
+
         <div>
+            <NavBar/>
             <div>
                 <button>Hire</button>
                 <button>Apply</button>
