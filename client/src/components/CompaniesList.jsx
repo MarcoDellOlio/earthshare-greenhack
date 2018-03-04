@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import CompaniesIndex from './CompaniesIndex'
 import { CompanyIndexContainer, SplashImageContainer, SplashHeaderContainer } from './styled-components/Containers'
 import { SplashImage } from './styled-components/Images'

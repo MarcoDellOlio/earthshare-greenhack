@@ -50,7 +50,21 @@ class App extends Component {
           ]
   }
 
-
+componentWillMount(){
+  this.getUsers()
+}
+//(GET) All users
+async getUsers() {
+  try{
+    const res = await axios.get('/api/users')
+    console.log("CALLED")
+    const users = res.data
+    this.setState({users: users})
+  }
+  catch(err){
+    console.log(err)
+  }
+}
   //(POST) Create a User  
  createUser = async (newUser) => {
 
