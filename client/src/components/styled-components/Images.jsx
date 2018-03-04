@@ -31,4 +31,8 @@ export const CompanyImage = styled.img`
     }
 `
 
+export const EarthShareImage = styled.img`
+    width: 100vw;
+`
+
 export default { SplashImage, CompanyImage}
