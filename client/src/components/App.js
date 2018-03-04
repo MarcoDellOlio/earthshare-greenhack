@@ -11,47 +11,48 @@ class App extends Component {
   state = {
     users: [],
     companies: [
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      }
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // }
           ]
   }
 
 componentWillMount(){
   this.getUsers()
+  this.getCompanies()
 }
 //(GET) All users
 async getUsers() {
@@ -60,6 +61,18 @@ async getUsers() {
     console.log("CALLED")
     const users = res.data
     this.setState({users: users})
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+//(GET) All companies
+async getCompanies() {
+  try{
+    const res = await axios.get('/api/companies')
+    console.log("CALLED")
+    const companies = res.data
+    this.setState({companies: companies})
   }
   catch(err){
     console.log(err)
