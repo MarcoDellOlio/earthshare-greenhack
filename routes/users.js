@@ -19,6 +19,17 @@ router.get('/companies', async (request, response) => {
     }
 })
 
+router.get('/companies/:companyId', async (request, response) => {
+    try {
+        const company = await User.findById(request.params.companyId)
+        response.json(company)
+    }
+    
+    catch (err) {
+        console.log(err)
+    }
+})
+
 router.get('/companies/jobs', async (request, response) => {
 
     try {
@@ -51,7 +62,7 @@ router.get('/users', async (request, response) => {
     }
 })
 
-router.get('/:id', async (request, response) => {
+router.get('users/:userId', async (request, response) => {
     try {
         const user = await User.findById(request.params.id)
         response.json(user)
