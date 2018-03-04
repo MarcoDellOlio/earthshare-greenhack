@@ -24,7 +24,7 @@ class CompanyShow extends Component{
     render(){
         return(
             <div>
-                <img  src="http://www.earthsharega.org/wp-content/uploads/2014/02/GREENJOBS-300x148.png" width="300" height="148"/>
+                <img  src="http://www.earthsharega.org/wp-content/uploads/2014/02/GREENJOBS-300x148.png" width="300" height="148" alt="green jobs company logo"/>
                 <div>{this.state.company.organization}</div>
                 <div>{this.state.company.website}</div>
                 <div>
