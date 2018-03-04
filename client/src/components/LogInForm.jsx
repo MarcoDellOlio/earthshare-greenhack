@@ -47,7 +47,7 @@ class LogInForm extends Component {
 
           this.state.isEmployer ? 
           `/companies/${this.state.id}` :
-          `/users/${this.state.id}`
+          `/jobs`
 
 
         }>Jobs</Redirect> :

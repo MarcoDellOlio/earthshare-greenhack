@@ -27,7 +27,9 @@ class JobSeekerForm extends Component {
         }
         console.log(newUser)
         axios.post("/api", newUser)
-            .then(response => console.log(response))
+            .then(res => {
+                this.setState({id: res.data._id})
+            })
             .catch(error => console.log(error))
     }
 
@@ -37,7 +39,7 @@ class JobSeekerForm extends Component {
         return (
             <UserFormContainer>
 
-                {this.state.redirect ? <Redirect to="/users">Users</Redirect> :
+                {this.state.redirect ? <Redirect to="/jobs">Users</Redirect> :
                     <FormWrapper>
                         <FormBody onSubmit={this.addNewUser}>
                             <FormField>
