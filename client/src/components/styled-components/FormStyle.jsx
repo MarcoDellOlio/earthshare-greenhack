@@ -114,6 +114,10 @@ export const UserFormContainer = styled.div`
     height: 100vh;
 `
 
+export const TextArea = styled.textarea`
+  width: 100%;
+`
+
 export default {
-    UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
+  TextArea, UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
 }

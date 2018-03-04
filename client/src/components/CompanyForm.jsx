@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 
-import { UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton} from './styled-components/FormStyle'
+import { TextArea, UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton} from './styled-components/FormStyle'
 
 class CompanyForm extends Component {
     state = {
@@ -79,13 +79,13 @@ class CompanyForm extends Component {
                             placeholder="Image"
                             onChange={this.handleInputChange} />
                     </FormField>
-                    <textarea>
+                    <TextArea>
                         <FormInput
                             type="text-area"
                             name="description"
                             placeholder="Description"
                             onChange={this.handleInputChange} />
-                    </textarea>
+                    </TextArea>
                     <FormField>
                         <FormInputButton
                             type="submit"
