@@ -92,7 +92,7 @@ class CompanyForm extends Component {
                             value="Add New Company" />
                     </FormField>
                     <FormField>
-                    <FormButton><Link to="/companies">Cancel</Link></FormButton>
+                    <FormButton><Link to="/">Cancel</Link></FormButton>
                     </FormField>
                 </FormBody>
                 </FormWrapper>}

@@ -5,11 +5,17 @@ import { SplashImage } from './styled-components/Images'
 
 
 const CompaniesList = (props) => {
+    console.log(props.companies)
     const companiesList = props.companies.map((company, index) => {
+        console.log(company)
+
         return (
             <div>
 
-                <CompaniesIndex id={company._id}/>
+                <CompaniesIndex 
+                // picture={company.picture}
+                                // id={company._id}
+                                />
             </div>
         )
     })

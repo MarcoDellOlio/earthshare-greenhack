@@ -73,7 +73,7 @@ class JobSeekerForm extends Component {
                             value="Add New User" />
                     </FormField>
                     <FormField>
-                    <FormButton><Link to="/users">Cancel</Link></FormButton>
+                    <FormButton><Link to="/">Cancel</Link></FormButton>
                     </FormField>
                 </FormBody>
                 </FormWrapper>}

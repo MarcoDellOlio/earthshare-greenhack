@@ -1,6 +1,7 @@
 import React from 'react'
 import { Footer, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv } from './styled-components/LandingStyle'
 import NavBar from './NavBar'
+import { Link } from 'react-router-dom'
 
 const Home = (props) => {
 
@@ -22,7 +23,7 @@ const Home = (props) => {
                         palo santo whatever aesthetic church-key deep v.
                         Four loko tofu dolore health goth lorem
                     </HiringBlurb>
-                    <ButtonStyle>Create a Job Listing</ButtonStyle>
+                    <Link to="/companies/new"><ButtonStyle>Create a Job Listing</ButtonStyle></Link>
                     </HiringTextDiv>
                 </HiringDiv>
                 <SeekingDiv>
@@ -36,7 +37,7 @@ const Home = (props) => {
                         palo santo whatever aesthetic church-key deep v.
                         Four loko tofu dolore health goth lorem
                     </SeekingBlurb>
-                    <ButtonStyle>Join the Search</ButtonStyle>
+                    <Link to="/users/new"><ButtonStyle>Join the Search</ButtonStyle></Link>
                     </SeekingTextDiv>
                 </SeekingDiv>
             </GreenJobsHeader>

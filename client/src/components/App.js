@@ -12,44 +12,7 @@ import LogInForm from './LogInForm'
 class App extends Component {
   state = {
     users: [],
-    companies: [
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      }
-          ]
+    companies: [ ]
   }
 
   componentWillMount() {
@@ -84,7 +47,7 @@ class App extends Component {
   createUser = async (newUser) => {
 
     try {
-      // const res = await axios.post('/api/users', newUser)
+      const res = await axios.post('/api/users', newUser)
       // newUser = res.data
       const updatedUsers = [...this.state.users]
       this.setState({ users: updatedUsers })
@@ -110,7 +73,7 @@ class App extends Component {
   createCompany = async (newCompany) => {
 
     try {
-      // const res = await axios.post('/api/companies', newCompany)
+      const res = await axios.post('/api/companies', newCompany)
       // newCompany = res.data
       const updatedCompanies = [...this.state.companies]
       this.setState({ companies: updatedCompanies })
