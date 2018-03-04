@@ -1,16 +1,84 @@
 import React, { Component } from 'react'
-import EmployerForm from './EmployerForm'
+import CompanyForm from './CompanyForm'
 import JobSeekerForm from './JobSeekerForm'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import JobsList from './JobsList'
+import CompanyShow from './CompanyShow'
+import CompaniesList from './CompaniesList'
+import Home from './Home'
 import axios from 'axios'
 
 class App extends Component {
   state = {
-    users: []
+    users: [],
+    companies: [
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // },
+      // {
+      //   name: "company1",
+      // }
+          ]
   }
 
-
+componentWillMount(){
+  this.getUsers()
+  this.getCompanies()
+}
+//(GET) All users
+async getUsers() {
+  try{
+    const res = await axios.get('/api/users')
+    console.log("CALLED")
+    const users = res.data
+    this.setState({users: users})
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+//(GET) All companies
+async getCompanies() {
+  try{
+    const res = await axios.get('/api/companies')
+    console.log("CALLED")
+    const companies = res.data
+    this.setState({companies: companies})
+  }
+  catch(err){
+    console.log(err)
+  }
+}
   //(POST) Create a User  
  createUser = async (newUser) => {
 
@@ -37,18 +105,49 @@ class App extends Component {
 
   }
 
+    //(POST) Create a User  
+ createCompany = async (newCompany) => {
+
+  try {
+    // const res = await axios.post('/api/companies', newCompany)
+    // newCompany = res.data
+    const updatedCompanies = [...this.state.companies]
+    this.setState({ companies: updatedCompanies })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+addNewCompany = async (newCompany) => {
+  try {
+    await this.createCompany(newCompany)
+    const companies = [...this.state.companies]
+    companies.push(newCompany)
+    this.setState({ companies })
+  }
+  catch (err) {
+    console.log(err)
+  }
+
+}
+
+
   
   render() {
     const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props}/>)
-    const EmployerFormComponent = (props) => (<EmployerForm addNewUser={this.addNewUser}/>)
+    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany}/>)
     const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser}/>)
-
+    const CompaniesListComponent = (props) => (<CompaniesList companies = {this.state.companies}/>)
+    const CompanyShowComponent = (props) => (<CompanyShow />)
     return (
       <Router>
       <Switch>
+        <Route exact path="/" component={Home}/>
         <Route exact path="/jobs" component={JobsListComponent}/>
-        <Route exact path="/employer/new" component={EmployerFormComponent} />
+        <Route exact path="/companies" component={CompaniesListComponent}/>
+        <Route exact path="/companies/new" component={CompanyFormComponent} />
         <Route exact path="/job-seeker/new" component={JobSeekerFormComponent} />
+        <Route exact path="/companies/:company_id" render={CompanyShowComponent}/>
       </Switch>
     </Router>
     )

@@ -1,12 +1,50 @@
 const express = require('express')
-const User = require('../db/models/User')
+const User = require('../db/models/UserModel')
 
 const router = express.Router()
 
-router.get('/', async (request, response) => {
+router.get('/companies', async (request, response) => {
+
     try {
         const users = await User.find({})
-        response.json(users)
+        const companies = users.map((user) => {
+            if (user.isEmployer) {
+                return user
+            }
+        })
+        response.json(companies)
+    }
+    catch (err) {
+        console.log(err)
+    }
+})
+
+router.get('/companies/jobs', async (request, response) => {
+
+    try {
+        const users = await User.find({})
+        const companies = users.map((user) => {
+            if (user.isEmployer) {
+                return user
+            }
+        })
+        response.json(companies)
+    }
+    catch (err) {
+        console.log(err)
+    }
+})
+
+router.get('/users', async (request, response) => {
+
+    try {
+        const users = await User.find({})
+        const jobseekers = users.map((user) => {
+            if (!(user.isEmployer)) {
+                return user
+            }
+        })
+        response.json(jobseekers)
     }
     catch (err) {
         console.log(err)
@@ -38,7 +76,7 @@ router.post('/', async (request, response) => {
 router.delete('/:userId', async (request, response) => {
     try {
         await User.findByIdAndRemove(request.params.userId)
-        response.send('completed delete')
+        response.json(user)
     }
     catch (err) {
         console.log(err)
