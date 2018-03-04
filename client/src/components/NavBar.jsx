@@ -12,7 +12,7 @@ const NavBar = (props) => {
         <img  src="http://www.earthsharega.org/wp-content/uploads/2014/02/GREENJOBS-300x148.png" width="239" height="108"/>
         </div>
         <div>
-            <h2>Sign In/Sign Up</h2>
+            <Link to="/login"><h2>Sign In</h2></Link>
             {/* <h2>Sign Up</h2> */}
         </div>
         </NavDiv>

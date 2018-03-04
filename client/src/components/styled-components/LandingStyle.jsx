@@ -57,7 +57,48 @@ export const TreesImage = styled.img`
 export const SocialMediaDiv = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+
 `
 
+export const EarthShareDiv = styled.div`
+    display: flex;
+`
+export const EarthShareInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
 
-export default { SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }
+`
+
+export const CompaniesDiv = styled.div`
+    height: 40vh;
+    background-color: #63a0c8;
+
+`
+
+export const TestimonialsDiv = styled.div`
+    height: 40vh;
+    
+`
+export const LookingToHire = styled.div`
+    display: flex;
+    height: 30vh;
+    background-color: #57a619;
+
+`
+
+export const Advertisement = styled.div`
+    height: 45vh;
+`
+
+export const Footer = styled.div`
+    display: flex;
+    height: 30vh;
+    background-color: #63a0c8;
+`
+
+export default {  Footer, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }

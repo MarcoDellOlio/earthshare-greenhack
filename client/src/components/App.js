@@ -12,44 +12,7 @@ import LogInForm from './LogInForm'
 class App extends Component {
   state = {
     users: [],
-    companies: [
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      },
-      {
-        name: "company1",
-      }
-          ]
+    companies: [ ]
   }
 
   componentWillMount() {
@@ -84,7 +47,7 @@ class App extends Component {
   createUser = async (newUser) => {
 
     try {
-      // const res = await axios.post('/api/users', newUser)
+      const res = await axios.post('/api/users', newUser)
       // newUser = res.data
       const updatedUsers = [...this.state.users]
       this.setState({ users: updatedUsers })
@@ -110,7 +73,7 @@ class App extends Component {
   createCompany = async (newCompany) => {
 
     try {
-      // const res = await axios.post('/api/companies', newCompany)
+      const res = await axios.post('/api/companies', newCompany)
       // newCompany = res.data
       const updatedCompanies = [...this.state.companies]
       this.setState({ companies: updatedCompanies })
@@ -135,11 +98,11 @@ class App extends Component {
 
 
   render() {
-    const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props} />)
-    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany} />)
-    const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser} />)
-    const CompaniesListComponent = (props) => (<CompaniesList companies={this.state.companies} />)
-    const CompanyShowComponent = (props) => (<CompanyShow />)
+    const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props}/>)
+    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany}/>)
+    const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser}/>)
+    const CompaniesListComponent = (props) => (<CompaniesList companies = {this.state.companies}/>)
+    const CompanyShowComponent = (props) => (<CompanyShow {...props}/>)
     return (
       <Router>
       <Switch>
@@ -149,7 +112,7 @@ class App extends Component {
         <Route exact path="/companies" component={CompaniesListComponent}/>
         <Route exact path="/companies/new" component={CompanyFormComponent} />
         <Route exact path="/users/new" component={JobSeekerFormComponent} />
-        <Route exact path="/companies/:company_id" render={CompanyShowComponent}/>
+        <Route exact path="/companies/:companyId" render={CompanyShowComponent}/>
       </Switch>
     </Router>
     )

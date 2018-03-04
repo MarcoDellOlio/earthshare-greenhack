@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import { UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton } from './styled-components/FormStyle'
+import { withAlert } from 'react-alert'
 
 class LogInForm extends Component {
   state = {
@@ -20,10 +21,20 @@ class LogInForm extends Component {
     event.preventDefault()
     axios.post("/api/authenticate", {email, password}) 
     .then(res => {
+      console.log(res)
+     
       const id = res.data._id
       const isEmployer = res.data.isEmployer
-      this.setState({id, isEmployer})
+      const response = res.data.response
+      if (id) { this.setState({id, isEmployer})}
+      else if (response === "User not found") {
+        this.props.alert.error('User does not exists')
+      }
+      else if (response === "Password is incorrect") {
+        this.props.alert.error('Password is incorrect')
+      }   
     })
+
     .catch (err => console.log(err)) 
   }
 
@@ -71,4 +82,4 @@ class LogInForm extends Component {
   }
 }
 
-export default LogInForm
+export default withAlert(LogInForm)
