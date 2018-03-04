@@ -15,7 +15,7 @@ export const SeekingDiv = styled.div`
 
 export const GreenJobsHeader = styled.div`
     display:flex;
-    margin-top: 40px;
+   
 `
 export const GreenJobsParagraph = styled.p`
     width: 50%;
@@ -54,13 +54,21 @@ export const TreesImage = styled.img`
     height: 30vh;
 `
 
-export const SocialMediaDiv = styled.div`
+export const LinksDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 15vh;
+    background-color: rgba(99, 160, 200, 0.25);
+`
+export const FocusAreas = styled.ul`
+    display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 100vw;
+`
 
+export const FocusHeader = styled.div`
+    margin-top: 25px;
 `
 
 export const EarthShareDiv = styled.div`
@@ -96,21 +104,5 @@ export const Advertisement = styled.div`
     display: flex;
 `
 
-export const Footer = styled.div`
-    display: flex;
-    height: 30vh;
-    background-color: #63a0c8;
-`
 
-export const SocialMediaImages = styled.div`
-    justify-content: space-between;
-`
-
-export const ThreeAds = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
-
-export default {  ThreeAds, SocialMediaImages, Footer, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }
+export default {  FocusHeader, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, LinksDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }

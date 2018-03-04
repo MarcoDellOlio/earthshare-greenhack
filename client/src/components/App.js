@@ -12,7 +12,7 @@ import LogInForm from './LogInForm'
 class App extends Component {
   state = {
     users: [],
-    companies: [ ]
+    companies: []
   }
 
   componentWillMount() {
