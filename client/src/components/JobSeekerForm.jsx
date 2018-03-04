@@ -1,28 +1,34 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
+import axios from 'axios'
 
-import { UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton} from './styled-components/FormStyle'
+import { UserFormContainer, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton } from './styled-components/FormStyle'
 
 class JobSeekerForm extends Component {
     state = {
-        newUser: {},
         redirect: false
     }
     handleInputChange = (event) => {
-        const attribute = event.target.name
-        let value = event.target.value
-        const newUser = {...this.state.newUser}
-        newUser[attribute] = value
-        this.setState({newUser})
+        this.setState({ [event.target.name]: event.target.value })
+        event.preventDefault()
     }
     resetForm = () => {
-        const newUser = {...this.state.newUser}
-        this.setState({newUser, redirect: true})
+        const newUser = { ...this.state.newUser }
+        this.setState({ newUser, redirect: true })
     }
     addNewUser = (event) => {
         event.preventDefault()
-        this.props.addNewUser(this.state.newUser)
-        this.resetForm()
+        const newUser = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            password: this.state.password,
+            isEmployer: false
+        }
+        console.log(newUser)
+        axios.post("/api", newUser)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
     }
 
 
@@ -32,51 +38,51 @@ class JobSeekerForm extends Component {
             <UserFormContainer>
 
                 {this.state.redirect ? <Redirect to="/users">Users</Redirect> :
-                <FormWrapper>
-                      <FormBody onSubmit={this.addNewUser}>
-                    <FormField>
-                        <FormHeader>
-                            <FormHeading>New User</FormHeading>
-                        </FormHeader>
-                        <FormInput
-                            type="string"
-                            name="firstName"
-                            placeholder="First Name"
-                            onChange={this.handleInputChange} />
-                    </FormField>
+                    <FormWrapper>
+                        <FormBody onSubmit={this.addNewUser}>
+                            <FormField>
+                                <FormHeader>
+                                    <FormHeading>New User</FormHeading>
+                                </FormHeader>
+                                <FormInput
+                                    type="string"
+                                    name="firstName"
+                                    placeholder="First Name"
+                                    onChange={this.handleInputChange} />
+                            </FormField>
 
-                    <FormField>
-                        
-                        <FormInput
-                            type="string"
-                            name="lastName"
-                            placeholder="Last Name"
-                            onChange={this.handleInputChange} />
-                    </FormField>
-                    <FormField>
-                        <FormInput
-                            type="string"
-                            name="email"
-                            placeholder="Email"
-                            onChange={this.handleInputChange} />
-                    </FormField>
-                    <FormField>
-                        <FormInput
-                            type="string"
-                            name="password"
-                            placeholder="Password"
-                            onChange={this.handleInputChange} />
-                    </FormField>
-                    <FormField>
-                        <FormInputButton
-                            type="submit"
-                            value="Add New User" />
-                    </FormField>
-                    <FormField>
-                    <FormButton><Link to="/">Cancel</Link></FormButton>
-                    </FormField>
-                </FormBody>
-                </FormWrapper>}
+                            <FormField>
+
+                                <FormInput
+                                    type="string"
+                                    name="lastName"
+                                    placeholder="Last Name"
+                                    onChange={this.handleInputChange} />
+                            </FormField>
+                            <FormField>
+                                <FormInput
+                                    type="string"
+                                    name="email"
+                                    placeholder="Email"
+                                    onChange={this.handleInputChange} />
+                            </FormField>
+                            <FormField>
+                                <FormInput
+                                    type="string"
+                                    name="password"
+                                    placeholder="Password"
+                                    onChange={this.handleInputChange} />
+                            </FormField>
+                            <FormField>
+                                <FormInputButton
+                                    type="submit"
+                                    value="Add New User" />
+                            </FormField>
+                            <FormField>
+                                <FormButton><Link to="/">Cancel</Link></FormButton>
+                            </FormField>
+                        </FormBody>
+                    </FormWrapper>}
             </UserFormContainer>
         )
 

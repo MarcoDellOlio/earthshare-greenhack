@@ -33,7 +33,7 @@ const UserSchema = new Schema(
     email: { type: String, required: true},
     password: { type: String, required: true},
     isEmployer: {type: Boolean},
-    organization : { type: String, required: true},
+    organization : { type: String},
     industry : [],
     firstName : { type: String, required: true},
     lastName : { type: String, required: true},
