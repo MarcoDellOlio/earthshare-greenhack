@@ -9,7 +9,7 @@ const CompaniesList = (props) => {
         return (
             <div>
 
-                <CompaniesIndex />
+                <CompaniesIndex id={company._id}/>
             </div>
         )
     })
