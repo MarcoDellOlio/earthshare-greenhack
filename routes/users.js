@@ -74,6 +74,7 @@ router.get('users/:userId', async (request, response) => {
 
 router.post('/', async (request, response) => {
     try {
+        console.log(request.body)
         const newUserInfo = await request.body
         const newUser = await User.create(newUserInfo)
         await newUser.save()
