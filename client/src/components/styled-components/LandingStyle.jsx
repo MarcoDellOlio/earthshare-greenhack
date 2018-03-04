@@ -46,6 +46,18 @@ export const ButtonStyle = styled.button`
     height: 40px;
     margin-bottom: 25px;
     border-radius: 4px;
+   
 `
 
-export default { ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }
+export const TreesImage = styled.img`
+    width: 100vw;
+    height: 30vh;
+`
+
+export const SocialMediaDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+
+export default { SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }
