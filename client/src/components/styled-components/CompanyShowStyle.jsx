@@ -46,7 +46,18 @@ export const ButtonStyle = styled.button`
     height: 40px;
     margin-bottom: 25px;
     border-radius: 4px;
+    a{
+        text-decoration: none;
+        color: #1b1b1b;
+    }
    
+`
+
+export const JobsLink = styled.div`
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
 `
 
 export const TreesImage = styled.img`
@@ -105,4 +116,4 @@ export const Advertisement = styled.div`
 `
 
 
-export default {  FocusHeader, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, LinksDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }
+export default {  JobsLink, FocusHeader, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, LinksDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }
