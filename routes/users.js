@@ -9,7 +9,22 @@ router.get('/companies', async (request, response) => {
         const users = await User.find({})
         const companies = users.map((user) => {
             if (user.isEmployer) {
-                console.log(user)
+                return user
+            }
+        })
+        response.json(companies)
+    }
+    catch (err) {
+        console.log(err)
+    }
+})
+
+router.get('/companies/jobs', async (request, response) => {
+
+    try {
+        const users = await User.find({})
+        const companies = users.map((user) => {
+            if (user.isEmployer) {
                 return user
             }
         })
@@ -26,7 +41,6 @@ router.get('/users', async (request, response) => {
         const users = await User.find({})
         const jobseekers = users.map((user) => {
             if (!(user.isEmployer)) {
-                console.log(user)
                 return user
             }
         })
