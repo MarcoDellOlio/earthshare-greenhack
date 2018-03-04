@@ -77,6 +77,25 @@ const Post = require('./models/PostModel')
       posts : []
     })
 
+    const Company4 = new User({
+      email: "company4@company4.com",
+      password: "abcdef",
+      isEmployer: true,
+      organization : "company4",
+      industry : ["noprofit"],
+      firstName : "Marco",
+      lastName : "Dell'Olio",
+      phoneNumber : "1234567890",
+      website : "www.company4.com",
+      picture : "https://picsum.photos/200/300/?random",
+      city : "Atlanta",
+      streetAddress: "123 Smart street",
+      zipCode : "30306",
+      causes : ["disability, mobility"],
+      jobs : [],
+      posts : []
+    })
+
     const job1 = new  Job({
       title: "Money specialist",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",

@@ -14,11 +14,12 @@ class CompanyShow extends Component{
     }
 
     componentWillMount(){
-        this.getOneCompany
+        this.getOneCompany()
     }
     async getOneCompany() {
         try {
-            const res = await axios.get(`/api/companies/${this.props.match.params.company_id}`)
+            console.log("test", this.props.match.params.companyId)
+            const res = await axios.get(`/api/companies/${this.props.match.params.companyId}`)
             const company = res.data
             this.setState({ company: company })
         }

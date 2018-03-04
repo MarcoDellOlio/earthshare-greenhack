@@ -1,6 +1,6 @@
 const express = require('express')
-const Job = require('../db/models/JobModel')
-const User = require('../db/models/UserModel')
+const Job = require('../db/Models/JobModel')
+const User = require('../db/Models/UserModel')
 const router = express.Router({ mergeParams: true })
 
 router.get('/', async (request, response) => {

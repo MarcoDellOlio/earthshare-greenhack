@@ -16,14 +16,13 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.getUsers()
-    this.getCompanies()
+    // this.getUsers()
+    // this.getCompanies()
   }
   //(GET) All users
   async getUsers() {
     try {
       const res = await axios.get('/api/users')
-      console.log("CALLED")
       const users = res.data
       this.setState({ users: users })
     }
@@ -35,8 +34,8 @@ class App extends Component {
   async getCompanies() {
     try {
       const res = await axios.get('/api/companies')
-      console.log("CALLED")
       const companies = res.data
+      console.log(res.data)
       this.setState({ companies: companies })
     }
     catch (err) {
@@ -98,11 +97,11 @@ class App extends Component {
 
 
   render() {
-    const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props} />)
-    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany} />)
-    const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser} />)
-    const CompaniesListComponent = (props) => (<CompaniesList companies={this.state.companies} />)
-    const CompanyShowComponent = (props) => (<CompanyShow />)
+    const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props}/>)
+    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany}/>)
+    const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser}/>)
+    const CompaniesListComponent = (props) => (<CompaniesList companies = {this.state.companies}/>)
+    const CompanyShowComponent = (props) => (<CompanyShow {...props}/>)
     return (
       <Router>
       <Switch>
@@ -112,7 +111,7 @@ class App extends Component {
         <Route exact path="/companies" component={CompaniesListComponent}/>
         <Route exact path="/companies/new" component={CompanyFormComponent} />
         <Route exact path="/users/new" component={JobSeekerFormComponent} />
-        <Route exact path="/companies/:company_id" render={CompanyShowComponent}/>
+        <Route exact path="/companies/:companyId" render={CompanyShowComponent}/>
       </Switch>
     </Router>
     )

@@ -1,6 +1,6 @@
 const express = require('express')
-const Post = require('../db/models/PostModel')
-const User = require('../db/models/UserModel')
+const Post = require('../db/Models/PostModel')
+const User = require('../db/Models/UserModel')
 const router = express.Router({ mergeParams: true })
 
 router.get('/', (request, response) => {
