@@ -12,42 +12,42 @@ class App extends Component {
   state = {
     users: [],
     companies: [
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // }
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      }
           ]
   }
 
