@@ -19,7 +19,7 @@ connection.on('connected', () => {
 
 // CONTROLLERS FOR ROUTES
 const UsersController = require('./routes/users')
-app.use('/api/users', UsersController)
+app.use('/api', UsersController)
 
 const JobsController = require('./routes/jobs')
 app.use('/api/jobs', JobsController)

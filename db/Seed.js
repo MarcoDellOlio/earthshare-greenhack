@@ -20,8 +20,6 @@ const Post = require('./models/PostModel')
 
 // COMPANIES
 
-
-
     const Company1 = new User({
       email: "company1@company1.com",
       password: "abcdef",
@@ -109,43 +107,35 @@ const Post = require('./models/PostModel')
       click : 91
     })
 
-  
-
-
-
-
-
-  // const marco = new User({
-  //   email: "marco@marco.com",
-  //   password: "bananaRama",
-  //   isEmployer: false,
-  //   organization : "",
-  //   industry : ["healthcare", "finance", "retail"],
-  //   firstName : "Marco",
-  //   lastName : "Dell'Olio",
-  //   phoneNumber : "6781212127",
-  //   website : "wwww.marcodellolio.com",
-  //   picture : "https://i.imgur.com/V8Jxe3D.jpg",
-  //   streetAddress: "",
-  //   zipCode : "30306",
-  //   city : "Atlanta",
-  //   causes : ["recycling", "wildlife", "civic"],
-  //   jobs : [],
-  //   posts : []
-  // })
-
-
-
+  const marco = new User({
+    email: "marco@marco.com",
+    password: "bananaRama",
+    isEmployer: false,
+    organization : "test",
+    industry : ["healthcare", "finance", "retail"],
+    firstName : "Marco",
+    lastName : "Dell'Olio",
+    phoneNumber : "6781212127",
+    website : "wwww.marcodellolio.com",
+    picture : "https://i.imgur.com/V8Jxe3D.jpg",
+    streetAddress: "",
+    zipCode : "30306",
+    city : "Atlanta",
+    causes : ["recycling", "wildlife", "civic"],
+    jobs : [],
+    posts : []
+  })
 
 Company1.jobs = [job1, job3]
 Company2.jobs = [job1]
-Company2.jobs = [job2, job3]
+Company3.jobs = [job2, job3]
 
 // Database setup
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => {return User.remove({})})
 .then(() => {return Company1.save();})
 .then(() => {return Company2.save();})
-.then(() => {return Company2.save();})
+.then(() => {return Company3.save();})
+.then(() => {return marco.save();})
 .then(() => { mongoose.connection.close()})
 .then(() => {console.log('db seeded')})
