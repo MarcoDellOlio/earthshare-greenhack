@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 
+app.use(bodyParser.json());
+
 app.use(express.static(__dirname + '/client/build/'));
 app.get('/', (req,res) => {
   res.sendFile(__dirname + '/client/build/index.html')
@@ -27,11 +29,6 @@ app.use('/api/jobs', JobsController)
 // If the connection throws an error
 connection.on('error', (err) => {
   console.log('Mongoose default connection error: ' + err);
-})
-
-app.use(bodyParser.json());
-app.get('/', (req,res) => {
-  res.send('Hello world!')
 })
 
 const PORT = process.env.PORT || 3001;

@@ -22,7 +22,11 @@ class CompanyShow extends Component{
 
     render(){
         return(
-            <div>Hello from Company Show</div>
+            <div>
+                <div>
+                <img  src="http://www.earthsharega.org/wp-content/uploads/2014/02/GREENJOBS-300x148.png" width="300" height="148"/>
+                </div>
+            </div>
         )
     }
 }

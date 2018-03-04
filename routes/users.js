@@ -73,6 +73,29 @@ router.post('/', async (request, response) => {
     }
 })
 
+router.post('/authenticate', async (request, response) => {
+    try{
+        const email = await request.body.email
+        const password = await request.body.password
+        const user = await User.findOne({"email": email})
+        if (!user) {
+            response.json({"response": "User not found"})
+        }
+        else {
+            if (user.password === password) {
+                response.json(user)
+            }
+            else {
+                response.json({"response": "Password is incorrect"})
+            }
+        }
+        response.json(user)
+    }
+    catch(err) {
+        console.log(err)
+    }
+})
+
 router.delete('/:userId', async (request, response) => {
     try {
         await User.findByIdAndRemove(request.params.userId)
