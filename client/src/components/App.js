@@ -98,11 +98,11 @@ class App extends Component {
 
 
   render() {
-    const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props} />)
-    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany} />)
-    const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser} />)
-    const CompaniesListComponent = (props) => (<CompaniesList companies={this.state.companies} />)
-    const CompanyShowComponent = (props) => (<CompanyShow />)
+    const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props}/>)
+    const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany}/>)
+    const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser}/>)
+    const CompaniesListComponent = (props) => (<CompaniesList companies = {this.state.companies}/>)
+    const CompanyShowComponent = (props) => (<CompanyShow {...props}/>)
     return (
       <Router>
       <Switch>
@@ -112,7 +112,7 @@ class App extends Component {
         <Route exact path="/companies" component={CompaniesListComponent}/>
         <Route exact path="/companies/new" component={CompanyFormComponent} />
         <Route exact path="/users/new" component={JobSeekerFormComponent} />
-        <Route exact path="/companies/:company_id" render={CompanyShowComponent}/>
+        <Route exact path="/companies/:companyId" render={CompanyShowComponent}/>
       </Switch>
     </Router>
     )

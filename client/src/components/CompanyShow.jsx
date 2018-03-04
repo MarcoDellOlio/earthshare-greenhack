@@ -7,11 +7,12 @@ class CompanyShow extends Component{
     }
 
     componentWillMount(){
-        this.getOneCompany
+        this.getOneCompany()
     }
     async getOneCompany() {
         try {
-            const res = await axios.get(`/api/companies/${this.props.match.params.company_id}`)
+            console.log("test", this.props.match.params.companyId)
+            const res = await axios.get(`/api/companies/${this.props.match.params.companyId}`)
             const company = res.data
             this.setState({ company: company })
         }
@@ -23,8 +24,10 @@ class CompanyShow extends Component{
     render(){
         return(
             <div>
-                <div>
                 <img  src="http://www.earthsharega.org/wp-content/uploads/2014/02/GREENJOBS-300x148.png" width="300" height="148"/>
+                <div>{this.state.company.organization}</div>
+                <div>{this.state.company.website}</div>
+                <div>
                 </div>
             </div>
         )
