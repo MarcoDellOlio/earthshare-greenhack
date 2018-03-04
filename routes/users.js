@@ -24,6 +24,7 @@ router.get('/companies/:companyId', async (request, response) => {
         const company = await User.findById(request.params.companyId)
         response.json(company)
     }
+    
     catch (err) {
         console.log(err)
     }

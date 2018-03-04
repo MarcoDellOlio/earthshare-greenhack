@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv } from './styled-components/LandingStyle'
+import { SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv } from './styled-components/LandingStyle'
 import NavBar from './NavBar'
 
 const Home = (props) => {
@@ -41,8 +41,33 @@ const Home = (props) => {
                 </SeekingDiv>
             </GreenJobsHeader>
             <div>
-                
+                <TreesImage src="https://i.imgur.com/SkJPLeT.jpg?2"/>
             </div>
+            <div>
+                <h1>
+                    EarthShare
+                </h1>
+                <p>
+                EarthShare of Georgia connects people to trusted non-profit
+                 organizations dedicated to conserving and protecting our air, 
+                 land and water. EarthShare of Georgia raises funds primarily 
+                 through workplace-giving partnerships with more than 50 employers 
+                 that help support more than 60 environmental and conservation organizations.
+                  Approximately 30 of these organizations are based in Georgia, 
+                  the others are national member groups – some of which have offices 
+                  or have field representatives in Georgia.
+                </p>
+            </div>
+            <SocialMediaDiv>
+                <div>
+                    <h2>Get Connected:</h2>
+                </div>
+                <img src="#"/>
+                <img src="#"/>
+                <img src="#"/>
+                <img src="#"/>
+                
+            </SocialMediaDiv>
             <div>
                 
             </div>

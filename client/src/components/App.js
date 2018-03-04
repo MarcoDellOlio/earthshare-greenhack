@@ -146,7 +146,7 @@ addNewCompany = async (newCompany) => {
         <Route exact path="/jobs" component={JobsListComponent}/>
         <Route exact path="/companies" component={CompaniesListComponent}/>
         <Route exact path="/companies/new" component={CompanyFormComponent} />
-        <Route exact path="/job-seeker/new" component={JobSeekerFormComponent} />
+        <Route exact path="/users/new" component={JobSeekerFormComponent} />
         <Route exact path="/companies/:company_id" render={CompanyShowComponent}/>
       </Switch>
     </Router>
