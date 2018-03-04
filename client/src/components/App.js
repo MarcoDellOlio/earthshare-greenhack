@@ -138,7 +138,7 @@ addNewCompany = async (newCompany) => {
     const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany}/>)
     const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser}/>)
     const CompaniesListComponent = (props) => (<CompaniesList companies = {this.state.companies}/>)
-    const CompanyShowComponent = (props) => (<CompanyShow />)
+    const CompanyShowComponent = (props) => (<CompanyShow {...props}/>)
     return (
       <Router>
       <Switch>
@@ -147,7 +147,7 @@ addNewCompany = async (newCompany) => {
         <Route exact path="/companies" component={CompaniesListComponent}/>
         <Route exact path="/companies/new" component={CompanyFormComponent} />
         <Route exact path="/users/new" component={JobSeekerFormComponent} />
-        <Route exact path="/companies/:company_id" render={CompanyShowComponent}/>
+        <Route exact path="/companies/:companyId" render={CompanyShowComponent}/>
       </Switch>
     </Router>
     )
