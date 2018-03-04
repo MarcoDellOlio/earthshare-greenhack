@@ -13,43 +13,43 @@ class App extends Component {
   state = {
     users: [],
     companies: [
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // },
-      // {
-      //   name: "company1",
-      // }
-    ]
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      },
+      {
+        name: "company1",
+      }
+          ]
   }
 
   componentWillMount() {
@@ -142,16 +142,16 @@ class App extends Component {
     const CompanyShowComponent = (props) => (<CompanyShow />)
     return (
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={LogInForm} />
-          <Route exact path="/jobs" component={JobsListComponent} />
-          <Route exact path="/companies" component={CompaniesListComponent} />
-          <Route exact path="/companies/new" component={CompanyFormComponent} />
-          <Route exact path="/job-seeker/new" component={JobSeekerFormComponent} />
-          <Route exact path="/companies/:company_id" render={CompanyShowComponent} />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/login" component={LogInForm} />
+        <Route exact path="/jobs" component={JobsListComponent}/>
+        <Route exact path="/companies" component={CompaniesListComponent}/>
+        <Route exact path="/companies/new" component={CompanyFormComponent} />
+        <Route exact path="/users/new" component={JobSeekerFormComponent} />
+        <Route exact path="/companies/:company_id" render={CompanyShowComponent}/>
+      </Switch>
+    </Router>
     )
   }
 }
