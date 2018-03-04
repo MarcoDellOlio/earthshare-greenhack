@@ -6,16 +6,13 @@ import { TextArea, UserFormContainer, FormWrapper, FormHeader, FormHeading, Form
 
 class CompanyForm extends Component {
     state = {
-        newCompany: {},
+
         redirect: false
     }
     handleInputChange = (event) => {
-        const attribute = event.target.name
-        let value = event.target.value
-        const newCompany = {...this.state.newCompany}
-        newCompany[attribute] = value
-        this.setState({newCompany})
-    }
+        this.setState({ [event.target.name]: event.target.value })
+        event.preventDefault()
+      }
     resetForm = () => {
         const newCompany = {...this.state.newCompany}
         this.setState({newCompany, redirect: true})
@@ -31,7 +28,8 @@ class CompanyForm extends Component {
             picture: this.state.image,
             isEmployer: true
         }
-        axios.post("/api")
+        console.log(newCompany)
+        axios.post("/api", newCompany)
         .then(response => console.log(response))
         .catch(error => console.log(error))
     }
