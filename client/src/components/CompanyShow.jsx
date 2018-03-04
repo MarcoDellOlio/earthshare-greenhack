@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CompanyShowImage } from './styled-components/Images'
-import { FocusHeader, FocusAreas, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, LinksDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv } from './styled-components/CompanyShowStyle'
+import { JobsLink, FocusHeader, FocusAreas, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, LinksDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv } from './styled-components/CompanyShowStyle'
 import NavBar from './NavBar'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -60,14 +60,11 @@ class CompanyShow extends Component{
                     CAROUSEL HERE
             </TestimonialsDiv>
         <LookingToHire>
-            <div>
-                <button>
-                HELLO
-                </button>
-                <button>
-                    HELLO
-                </button>
-            </div>
+            <JobsLink>
+                <ButtonStyle>
+                <Link to="jobs">See Jobs</Link>
+                </ButtonStyle>
+            </JobsLink>
         </LookingToHire>
         <Advertisement>
             <div>
