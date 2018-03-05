@@ -3,6 +3,7 @@ import { CompanyShowImage } from './styled-components/Images'
 import { JobsLink, FocusHeader, FocusAreas, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, LinksDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv } from './styled-components/CompanyShowStyle'
 import NavBar from './NavBar'
 import axios from 'axios'
+import { ThreeAds } from './styled-components/LandingStyle'
 import { Link } from 'react-router-dom'
 import MapContainer from './MapContainer'
 import Footer from './Footer'
@@ -61,24 +62,22 @@ class CompanyShow extends Component{
             </TestimonialsDiv>
         <LookingToHire>
             <JobsLink>
-                <ButtonStyle>
-                <Link to="jobs">See Jobs</Link>
-                </ButtonStyle>
+                <Link to="/jobs"><ButtonStyle>See Jobs</ButtonStyle></Link>
             </JobsLink>
         </LookingToHire>
         <Advertisement>
-            <div>
-                <hi>Get Notified</hi>
+            <ThreeAds>
+                <h2>Get Notified</h2>
                 <p>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</p>
-            </div>
-            <div>
-                <hi>Read the Blog</hi>
+            </ThreeAds>
+            <ThreeAds>
+                <h2>Read the Blog</h2>
                 <p>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</p>
-            </div>
-            <div>
-                <hi>Job Coaching</hi>
+            </ThreeAds>
+            <ThreeAds>
+                <h2>Job Coaching</h2>
                 <p>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</p>
-            </div>       
+            </ThreeAds>       
         </Advertisement>
         <Footer />
 
