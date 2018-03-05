@@ -2,7 +2,7 @@
 
 **Use the App [here](https://earthshare-project.herokuapp.com/)**
 
-**[App Presentation(https://docs.google.com/presentation/d/1KOHTUO6rBGC-Ju6vn-cwzo_g4D0eDlb4QRPl_oip6Kk/edit)**
+**[App Presentation](https://docs.google.com/presentation/d/1KOHTUO6rBGC-Ju6vn-cwzo_g4D0eDlb4QRPl_oip6Kk/edit)**
 
 
 **App Developers & Designers**: 
