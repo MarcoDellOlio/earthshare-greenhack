@@ -1,4 +1,4 @@
-# Vojaĝo
+# EarthShare
 
 **Use the App [here](https://earthshare-project.herokuapp.com/)**
 
