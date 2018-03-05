@@ -12,7 +12,8 @@
 * [Marco Dell'Olio](https://github.com/MarcoDellOlio)
 * [Sarah Moore](https://www.linkedin.com/in/sarahelizmoore/)
 * [Michelle Morgan](https://www.linkedin.com/in/michellecmorgan/)
-*[Brittany King](https://www.linkedin.com/in/brittany-king-93308823/)
+
+* [Brittany King](https://www.linkedin.com/in/brittany-king-93308823/)
 
 **App Overview**
 
