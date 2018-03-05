@@ -35,7 +35,7 @@ class CompanyShow extends Component{
                 <div>
             <NavBar />
             <GreenJobsHeader>
-                <CompanyShowImage src="https://i.imgur.com/Jk7JydQ.jpg"/>
+                <CompanyShowImage src="https://i.imgur.com/Jk7JydQ.jpg" alt="green jobs company logo"/>
             </GreenJobsHeader>
             <LinksDiv>
                 <FocusHeader>

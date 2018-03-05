@@ -39,7 +39,7 @@ class JobSeekerForm extends Component {
         return (
             <UserFormContainer>
 
-                {this.state.redirect ? <Redirect to="/jobs">Users</Redirect> :
+                {this.state.redirect ? <Redirect to="/job">Users</Redirect> :
                     <FormWrapper>
                         <FormBody onSubmit={this.addNewUser}>
                             <FormField>
