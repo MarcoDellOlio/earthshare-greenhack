@@ -4,11 +4,14 @@ import axios from 'axios'
 import { NavDiv } from './styled-components/NavStyle'
 import NavBar from './NavBar'
 import styled from 'styled-components'
+import moment from 'moment'
+
 class JobsList extends Component {
 
     state = {
         jobs: [],
-        sidebarShowing: false
+        sidebarShowing: false,
+        jobInSideBar: ''
     }
 
     componentWillMount = () => {
@@ -17,6 +20,11 @@ class JobsList extends Component {
 
     toggleSidebar = () => {
         this.setState({ sidebarShowing: !this.state.sidebarShowing })
+    }
+
+    handleClick = (event) => {
+        console.log(event);
+        this.toggleSidebar()
     }
 
     getAllJobs = async () => {
@@ -58,19 +66,19 @@ class JobsList extends Component {
                         {
                             this.state.jobs.map((item, index) => {
                                 return <div key={index}>
-                                    <ListingWrapper onClick={this.toggleSidebar}>
+                                    <ListingWrapper onClick={this.handleClick}>
 
                                         <ListingImageDiv>
                                             <img width="180" src="https://i.imgur.com/rJ7Tc4P.jpg" alt="" />
                                         </ListingImageDiv>
                                         <ListingDetailDiv>
-                                            <PostTitle>{item.job.title}</PostTitle>
+                                            <PostTitle name="jobInSideBar">{item.job.title}</PostTitle>
                                             <PostSubTitle>{item.user.organization} - {item.user.city}</PostSubTitle>
                                             <div>{item.job.description.slice(0, 300)} ...</div>
                                             <BottomPost>
                                                 <BottomPostData>
-                                                    <BottomPostItem>3 days ago</BottomPostItem>
-                                                    <BottomPostItem>{item.job.click} clicks</BottomPostItem>
+                                                    <BottomPostItem>Posted {moment(item.job.createdAt).startOf('hour').fromNow()}</BottomPostItem>
+                                                    <BottomPostItem>{item.job.click} views</BottomPostItem>
                                                 </BottomPostData>
                                                 <ApplyButton>Apply Now</ApplyButton>
                                             </BottomPost>
@@ -103,9 +111,13 @@ export default JobsList
 
 const ListingWrapper = styled.div`
     display: flex;
+    align-items: center;
     padding: 20px;
     padding-left: 40px;
     padding-right: 40px;
+    &:hover {
+        background-color: #eff5f9;
+    }
 `
 
 const BottomPost = styled.div`
@@ -118,7 +130,8 @@ const BottomPost = styled.div`
 const BottomPostData = styled.div`
     display: flex;
     flex-direction: row;
-    width: 200px;
+    justify-content: space-between;
+    width: 280px;
 
 `
 
@@ -146,6 +159,9 @@ const JobListings = styled.div`
 
 const Sidebar = styled.div`
     width: 500px;
+    padding: 20px;
+    margin-right: 35px;
+    border: 1px solid black;
 `
 
 const ListingDetailDiv = styled.div`
@@ -167,14 +183,17 @@ const SearchButton = styled.div`
     color: white;
     padding: 5px;
     border-radius: 5px;
-    height: 17px;
+    width: 100px;
+    text-align: center;
     margin: 10px;
 `
 const SearchInput = styled.input`
-    border-radius: 5px;
+    border-radius: 2px;
+    font-size: 20px;
     height: 23px;
     margin: 10px;
     width: 250px;
+    padding-left: 10px;
 `
 
 const BottomPostItem = styled.div`
@@ -184,10 +203,16 @@ const BottomPostItem = styled.div`
 const ApplyButton = styled.div`
     background-color: rgb(191, 191, 199);
     color: white;
+    width: 100px;
+    height: 35px;
+    text-align: center;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 5px;
     padding-right: 5px;
+    &:hover {
+        background-color: rgb(100, 100, 100);
+    }
 `
