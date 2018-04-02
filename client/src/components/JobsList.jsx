@@ -11,7 +11,7 @@ class JobsList extends Component {
     state = {
         jobs: [],
         sidebarShowing: false,
-        jobInSideBar: ''
+        jobInSideBar: {}
     }
 
     componentWillMount = () => {
@@ -22,9 +22,21 @@ class JobsList extends Component {
         this.setState({ sidebarShowing: !this.state.sidebarShowing })
     }
 
-    handleClick = (event) => {
-        console.log(event);
-        this.toggleSidebar()
+    handleClick = (item) => {
+        console.log("ID", item.job._id);
+        console.log("SIDE ID", this.state.jobInSideBar.id);
+        if (item.job._id === this.state.jobInSideBar.id) {
+            this.toggleSidebar()
+        }
+
+        this.setState({
+            jobInSideBar: {
+                title: item.job.title,
+                city: item.user.city,
+                organization: item.user.organization,
+                id: item.job._id
+            }
+        })
     }
 
     getAllJobs = async () => {
@@ -55,19 +67,13 @@ class JobsList extends Component {
                     <SearchInput type="text" placeholder="search jobs" />
                     <SearchInput type="text" placeholder="search location" />
                     <SearchButton>Search</SearchButton>
-
-
-
                 </SearchWrapper>
                 <JobPage>
-
                     <JobListings>
-
                         {
                             this.state.jobs.map((item, index) => {
                                 return <div key={index}>
-                                    <ListingWrapper onClick={this.handleClick}>
-
+                                    <ListingWrapper onClick={() => this.handleClick(item)}>
                                         <ListingImageDiv>
                                             <img width="180" src="https://i.imgur.com/rJ7Tc4P.jpg" alt="" />
                                         </ListingImageDiv>
@@ -83,7 +89,7 @@ class JobsList extends Component {
                                                 <ApplyButton>Apply Now</ApplyButton>
                                             </BottomPost>
                                         </ListingDetailDiv>
-
+                            
                                     </ListingWrapper>
                                 </div>
                             })
@@ -91,10 +97,8 @@ class JobsList extends Component {
                     </JobListings>
                     {this.state.sidebarShowing ?
                         <Sidebar>
-                            <div>Company 1</div>
-                            <div>Name</div>
-                            <div>Place</div>
-                            <div>Job Title</div>
+                            <div>{this.state.jobInSideBar.title}</div>
+                            <div>{this.state.jobInSideBar.organization} - {this.state.jobInSideBar.city}</div>
 
 
                         </Sidebar>
@@ -158,8 +162,8 @@ const JobListings = styled.div`
 `
 
 const Sidebar = styled.div`
-    width: 500px;
-    padding: 20px;
+    width: 400px;
+    padding: 10px;
     margin-right: 35px;
     border: 1px solid black;
 `
