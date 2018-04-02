@@ -23,9 +23,7 @@ class JobsList extends Component {
     }
 
     handleClick = (item) => {
-        console.log("ID", item.job._id);
-        console.log("SIDE ID", this.state.jobInSideBar.id);
-        if (item.job._id === this.state.jobInSideBar.id) {
+        if (!this.state.jobInSideBar.id || item.job._id === this.state.jobInSideBar.id || (item.job._id !== this.state.jobInSideBar.id && !this.state.sidebarShowing)) {
             this.toggleSidebar()
         }
 
