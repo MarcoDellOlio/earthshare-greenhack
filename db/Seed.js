@@ -103,7 +103,7 @@ const Post = require('./models/PostModel')
       link : "company link",
       salary : 20000000,
       requirements : "be fun",
-      click : 3
+      click : 0
     })
 
     const job2 = new  Job({
@@ -113,7 +113,7 @@ const Post = require('./models/PostModel')
       link : "company link",
       salary : 345000000,
       requirements : "be sad",
-      click : 98
+      click : 0
     })
 
     const job3 = new  Job({
@@ -123,7 +123,27 @@ const Post = require('./models/PostModel')
       link : "company link",
       salary : 2100,
       requirements : "maybe",
-      click : 91
+      click : 0
+    })
+
+    const job4 = new  Job({
+      title: "Beans Architect",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      department: "production",
+      link : "company link",
+      salary : 22100,
+      requirements : "maybe",
+      click : 0
+    })
+
+    const job5 = new  Job({
+      title: "Tester",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      department: "production",
+      link : "company link",
+      salary : 244500,
+      requirements : "maybe",
+      click : 0
     })
 
   const marco = new User({
@@ -146,8 +166,8 @@ const Post = require('./models/PostModel')
   })
 
 Company1.jobs = [job1, job3]
-Company2.jobs = [job1]
-Company3.jobs = [job2, job3]
+Company2.jobs = [job4]
+Company3.jobs = [job2, job5]
 
 // Database setup
 mongoose.connect(process.env.MONGODB_URI)
