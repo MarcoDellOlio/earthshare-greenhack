@@ -3,6 +3,7 @@ import JobsIndex from './JobsIndex'
 import axios from 'axios'
 import { NavDiv } from './styled-components/NavStyle'
 import NavBar from './NavBar'
+import Footer from './Footer'
 import styled from 'styled-components'
 import moment from 'moment'
 
@@ -121,6 +122,7 @@ class JobsList extends Component {
                     }
                 </JobPage>
 
+                <Footer />
             </div>
         )
     }
@@ -208,12 +210,26 @@ const SearchButton = styled.div`
     margin: 10px;
 `
 const SearchInput = styled.input`
-    border-radius: 2px;
+    border-radius: 5px;
+    border: 1px solid grey;
     font-size: 20px;
-    height: 23px;
+    height: 30px;
     margin: 10px;
-    width: 250px;
+    width: 340px;
     padding-left: 10px;
+    color: black;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: lightgrey;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: lightgrey;
+    }
+    &:-ms-input-placeholder { IE 10+
+        color: lightgrey;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: lightgrey;
+    } 
 `
 
 const BottomPostItem = styled.div`
