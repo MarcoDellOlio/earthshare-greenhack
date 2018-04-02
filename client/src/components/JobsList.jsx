@@ -26,15 +26,27 @@ class JobsList extends Component {
         if (!this.state.jobInSideBar.id || item.job._id === this.state.jobInSideBar.id || (item.job._id !== this.state.jobInSideBar.id && !this.state.sidebarShowing)) {
             this.toggleSidebar()
         }
+        
+        // nothing has been clicked on  OR the id's do not match 
+        // Still need to save to the database and determine what technically counts as a "View"
+        if (!this.state.jobInSideBar.id || (item.job._id !== this.state.jobInSideBar.id)){
+            this.incrementClick(item)
+        }
 
         this.setState({
             jobInSideBar: {
                 title: item.job.title,
                 city: item.user.city,
                 organization: item.user.organization,
-                id: item.job._id
+                id: item.job._id,
+                datePosted: item.job.createdAt,
+                numberOfViews: item.job.click
             }
         })
+    }
+
+    incrementClick = (item) => {
+        item.job.click ++
     }
 
     getAllJobs = async () => {
@@ -78,7 +90,7 @@ class JobsList extends Component {
                                         <ListingDetailDiv>
                                             <PostTitle name="jobInSideBar">{item.job.title}</PostTitle>
                                             <PostSubTitle>{item.user.organization} - {item.user.city}</PostSubTitle>
-                                            <div>{item.job.description.slice(0, 300)} ...</div>
+                                            <div>{item.job.description.slice(0, 270)} ...</div>
                                             <BottomPost>
                                                 <BottomPostData>
                                                     <BottomPostItem>Posted {moment(item.job.createdAt).startOf('hour').fromNow()}</BottomPostItem>
@@ -87,7 +99,7 @@ class JobsList extends Component {
                                                 <ApplyButton>Apply Now</ApplyButton>
                                             </BottomPost>
                                         </ListingDetailDiv>
-                            
+
                                     </ListingWrapper>
                                 </div>
                             })
@@ -95,9 +107,14 @@ class JobsList extends Component {
                     </JobListings>
                     {this.state.sidebarShowing ?
                         <Sidebar>
-                            <div>{this.state.jobInSideBar.title}</div>
-                            <div>{this.state.jobInSideBar.organization} - {this.state.jobInSideBar.city}</div>
-
+                            <SidebarTop>
+                                <PostTitle>{this.state.jobInSideBar.title}</PostTitle>
+                                <PostSubTitle>{this.state.jobInSideBar.organization} - {this.state.jobInSideBar.city}</PostSubTitle>
+                                <BottomPostData>
+                                    <BottomPostItem>Posted {moment(this.state.jobInSideBar.datePosted).startOf('hour').fromNow()}</BottomPostItem>
+                                    <BottomPostItem>{this.state.jobInSideBar.numberOfViews} views</BottomPostItem>
+                                </BottomPostData>
+                            </SidebarTop>
 
                         </Sidebar>
                         : null
@@ -116,7 +133,7 @@ const ListingWrapper = styled.div`
     align-items: center;
     padding: 20px;
     padding-left: 40px;
-    padding-right: 40px;
+    padding-right: 30px;
     &:hover {
         background-color: #eff5f9;
     }
@@ -143,6 +160,7 @@ const PostTitle = styled.div`
 
 const PostSubTitle = styled.div`
     font-size: 18px;
+    color: grey;
 `
 
 const ListingImageDiv = styled.div`
@@ -160,10 +178,10 @@ const JobListings = styled.div`
 `
 
 const Sidebar = styled.div`
-    width: 400px;
+    width: 1000px;
     padding: 10px;
     margin-right: 35px;
-    border: 1px solid black;
+    border: lightgrey 3px solid;
 `
 
 const ListingDetailDiv = styled.div`
@@ -217,4 +235,8 @@ const ApplyButton = styled.div`
     &:hover {
         background-color: rgb(100, 100, 100);
     }
+`
+
+const SidebarTop = styled.div`
+    border-bottom: lightgrey 3px solid;
 `
