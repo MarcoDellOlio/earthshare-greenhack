@@ -72,7 +72,7 @@ class JobsList extends Component {
     render() {
 
         return (
-            <div>
+            <Main>
                 <NavBar />
                 <SearchWrapper>
                     <SearchInput type="text" placeholder="search jobs" />
@@ -123,12 +123,16 @@ class JobsList extends Component {
                 </JobPage>
 
                 <Footer />
-            </div>
+            </Main>
         )
     }
 }
 
 export default JobsList
+
+const Main = styled.div`
+    font-family: helvetica;
+`
 
 const ListingWrapper = styled.div`
     display: flex;
@@ -153,7 +157,6 @@ const BottomPostData = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 280px;
-
 `
 
 const PostTitle = styled.div`
@@ -172,7 +175,6 @@ const ListingImageDiv = styled.div`
 const JobPage = styled.div`
     display: flex;
     flex-direction: row;
-
 `
 
 const JobListings = styled.div`
@@ -180,7 +182,7 @@ const JobListings = styled.div`
 `
 
 const Sidebar = styled.div`
-    width: 1000px;
+    width: 1150px;
     padding: 10px;
     margin-right: 35px;
     border: lightgrey 3px solid;
