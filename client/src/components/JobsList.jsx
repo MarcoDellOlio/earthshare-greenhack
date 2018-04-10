@@ -86,7 +86,7 @@ class JobsList extends Component {
                                 return <div key={index}>
                                     <ListingWrapper onClick={() => this.handleClick(item)}>
                                         <ListingImageDiv>
-                                            <img width="180" src="https://i.imgur.com/rJ7Tc4P.jpg" alt="" />
+                                            <ListingImg src={item.user.picture} alt="" />
                                         </ListingImageDiv>
                                         <ListingDetailDiv>
                                             <PostTitle name="jobInSideBar">{item.job.title}</PostTitle>
@@ -257,4 +257,10 @@ const ApplyButton = styled.div`
 
 const SidebarTop = styled.div`
     border-bottom: lightgrey 3px solid;
+`
+
+const ListingImg = styled.img`
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
 `
