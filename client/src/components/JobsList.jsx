@@ -41,7 +41,8 @@ class JobsList extends Component {
                 organization: item.user.organization,
                 id: item.job._id,
                 datePosted: item.job.createdAt,
-                numberOfViews: item.job.click
+                numberOfViews: item.job.click,
+                description: item.job.description
             }
         })
     }
@@ -115,7 +116,14 @@ class JobsList extends Component {
                                     <BottomPostItem>Posted {moment(this.state.jobInSideBar.datePosted).startOf('hour').fromNow()}</BottomPostItem>
                                     <BottomPostItem>{this.state.jobInSideBar.numberOfViews} views</BottomPostItem>
                                 </BottomPostData>
+                                <SidebarButtonContainer>
+                                    <ApplyButton>Apply Now</ApplyButton>
+                                    <SaveJobButton>Save Job</SaveJobButton>
+                                </SidebarButtonContainer>
                             </SidebarTop>
+                            <SidebarDescriptionSection>
+                                {this.state.jobInSideBar.description}
+                            </SidebarDescriptionSection>
 
                         </Sidebar>
                         : null
@@ -156,7 +164,7 @@ const BottomPostData = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 280px;
+    width: 270px;
 `
 
 const PostTitle = styled.div`
@@ -263,4 +271,32 @@ const ListingImg = styled.img`
     width: 180px;
     height: 180px;
     object-fit: cover;
+`
+
+const SidebarButtonContainer = styled.div`
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+`
+
+const SaveJobButton = styled.div`
+    background-color: orange;
+    color: white;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    &:hover {
+        background-color: rgb(100, 100, 100);
+    }
+`
+
+const SidebarDescriptionSection = styled.div`
+    padding-top: 20px;
 `
