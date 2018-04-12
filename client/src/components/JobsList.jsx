@@ -12,7 +12,8 @@ class JobsList extends Component {
     state = {
         jobs: [],
         sidebarShowing: false,
-        jobInSideBar: {}
+        jobInSideBar: {},
+        indexToStyle: '',
     }
 
     componentWillMount = () => {
@@ -23,15 +24,16 @@ class JobsList extends Component {
         this.setState({ sidebarShowing: !this.state.sidebarShowing })
     }
 
-    handleClick = (item) => {
+    handleClick = (item, index) => {
         if (!this.state.jobInSideBar.id || item.job._id === this.state.jobInSideBar.id || (item.job._id !== this.state.jobInSideBar.id && !this.state.sidebarShowing)) {
             this.toggleSidebar()
         }
-        
+
         // nothing has been clicked on  OR the id's do not match 
         // Still need to save to the database and determine what technically counts as a "View"
-        if (!this.state.jobInSideBar.id || (item.job._id !== this.state.jobInSideBar.id)){
-            this.incrementClick(item)
+        if (!this.state.jobInSideBar.id || (item.job._id !== this.state.jobInSideBar.id)) {
+            this.incrementClick(item, index)
+
         }
 
         this.setState({
@@ -47,8 +49,10 @@ class JobsList extends Component {
         })
     }
 
-    incrementClick = (item) => {
-        item.job.click ++
+    incrementClick = (item, index) => {
+        item.job.click++
+        console.log("INDEX", index);
+        this.setState({ indexToStyle: index })
     }
 
     getAllJobs = async () => {
@@ -85,7 +89,7 @@ class JobsList extends Component {
                         {
                             this.state.jobs.map((item, index) => {
                                 return <div key={index}>
-                                    <ListingWrapper onClick={() => this.handleClick(item)}>
+                                    <ListingWrapper onClick={() => this.handleClick(item, index)} index={index} indexToStyle={this.state.indexToStyle}>
                                         <ListingImageDiv>
                                             <ListingImg src={item.user.picture} alt="" />
                                         </ListingImageDiv>
@@ -148,6 +152,10 @@ const ListingWrapper = styled.div`
     padding: 20px;
     padding-left: 40px;
     padding-right: 30px;
+    transition: border .3s;
+    background-color: ${props => (props.index === props.indexToStyle) ? "rgb(191, 191, 199)" : null };
+    border-left: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null };
+    border-right: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null };
     &:hover {
         background-color: #eff5f9;
     }
