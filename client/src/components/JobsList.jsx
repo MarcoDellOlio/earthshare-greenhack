@@ -152,9 +152,10 @@ const ListingWrapper = styled.div`
     padding: 20px;
     padding-left: 40px;
     padding-right: 30px;
+	border-right: 10px solid transparent;
     transition: border .3s;
     background-color: ${props => (props.index === props.indexToStyle) ? "rgb(191, 191, 199)" : null };
-    border-left: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null };
+    /* border-left: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null }; */
     border-right: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null };
     &:hover {
         background-color: #eff5f9;
