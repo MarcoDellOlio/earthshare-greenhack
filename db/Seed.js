@@ -97,7 +97,7 @@ const Post = require('./models/PostModel')
     })
 
     const job1 = new  Job({
-      title: "Money specialist",
+      title: "Clean Energy Program Representative",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       department: "finance",
       link : "company link",
@@ -107,7 +107,7 @@ const Post = require('./models/PostModel')
     })
 
     const job2 = new  Job({
-      title: "Fun specialist",
+      title: "Marketing Intern",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       department: "fun",
       link : "company link",
@@ -117,7 +117,7 @@ const Post = require('./models/PostModel')
     })
 
     const job3 = new  Job({
-      title: "Beans specialist",
+      title: "Naturalist",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       department: "production",
       link : "company link",
@@ -127,7 +127,7 @@ const Post = require('./models/PostModel')
     })
 
     const job4 = new  Job({
-      title: "Beans Architect",
+      title: "Landscape Architect",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       department: "production",
       link : "company link",
@@ -137,7 +137,27 @@ const Post = require('./models/PostModel')
     })
 
     const job5 = new  Job({
-      title: "Tester",
+      title: "Solar Installer",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      department: "production",
+      link : "company link",
+      salary : 244500,
+      requirements : "maybe",
+      click : 0
+    })
+
+    const job6 = new  Job({
+      title: "Project Manager",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      department: "production",
+      link : "company link",
+      salary : 244500,
+      requirements : "maybe",
+      click : 0
+    })
+
+    const job7 = new  Job({
+      title: "Urban Forestry Crew Technician",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       department: "production",
       link : "company link",
@@ -166,7 +186,7 @@ const Post = require('./models/PostModel')
   })
 
 Company1.jobs = [job1, job3]
-Company2.jobs = [job4]
+Company2.jobs = [job4, job6, job7]
 Company3.jobs = [job2, job5]
 
 // Database setup
