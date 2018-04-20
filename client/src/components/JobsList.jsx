@@ -291,6 +291,7 @@ const ListingImg = styled.img`
     width: 180px;
     height: 180px;
     object-fit: cover;
+    border-radius: 5px;
 `
 
 const SidebarButtonContainer = styled.div`

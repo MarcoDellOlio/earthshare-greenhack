@@ -14,7 +14,9 @@ export const NavDiv = styled.div`
 
 export const SignInDiv = styled.div`
     display: flex;
+    flex-direction: column;
     align-items:center;
+    justify-content: center;
     justify-content: space-between;
 `
 export const FooterStyle = styled.div`
@@ -38,6 +40,26 @@ export const FooterFormat = styled.div`
     color: white;
 `
 
+export const SignInText = styled.div`
+    font-size: 20px;
+    letter-spacing: 1px;
+`
+
+export const UserIconContainer = styled.div`
+    font-size: 40px;
+`
+export const SignInContainer = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+export const HamburgerContainer = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+`
+
 export default {
-   NavDiv, FooterStyle, FooterFormat, SignInDiv
+    NavDiv, FooterStyle, FooterFormat, SignInDiv, SignInText, UserIconContainer, HamburgerContainer
 }
+
