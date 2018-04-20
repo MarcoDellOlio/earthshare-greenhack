@@ -6,6 +6,7 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import styled from 'styled-components'
 import moment from 'moment'
+import JobsFilterSection from './JobsFilterSection'
 
 class JobsList extends Component {
 
@@ -14,6 +15,7 @@ class JobsList extends Component {
         sidebarShowing: false,
         jobInSideBar: {},
         indexToStyle: '',
+        filterSectionShowing: false
     }
 
     componentWillMount = () => {
@@ -27,6 +29,9 @@ class JobsList extends Component {
     handleClick = (item, index) => {
         if (!this.state.jobInSideBar.id || item.job._id === this.state.jobInSideBar.id || (item.job._id !== this.state.jobInSideBar.id && !this.state.sidebarShowing)) {
             this.toggleSidebar()
+
+            // >> this removes the arrow when sidebar is closed, but also arrow is not there when that same job is opened again in sidebar
+            this.setState({indexToStyle: ''})
         }
 
         // nothing has been clicked on  OR the id's do not match 
@@ -84,11 +89,14 @@ class JobsList extends Component {
                     <SearchInput type="text" placeholder="search location" />
                     <SearchButton>Search</SearchButton>
                 </SearchWrapper>
+
+                {this.state.filterSectionShowing ? <JobsFilterSection /> : null}
+
                 <JobPage>
                     <JobListings>
                         {
                             this.state.jobs.map((item, index) => {
-                                return <div key={index}>
+                                return <OutermostListingWrapper key={index}>
                                     <ListingWrapper onClick={() => this.handleClick(item, index)} index={index} indexToStyle={this.state.indexToStyle}>
                                         <ListingImageDiv>
                                             <ListingImg src={item.user.picture} alt="" />
@@ -107,7 +115,10 @@ class JobsList extends Component {
                                         </ListingDetailDiv>
 
                                     </ListingWrapper>
-                                </div>
+                                    <ArrowContainer>
+                                        <Arrow index={index} indexToStyle={this.state.indexToStyle}></Arrow>
+                                    </ArrowContainer>
+                                </OutermostListingWrapper>
                             })
                         }
                     </JobListings>
@@ -154,9 +165,9 @@ const ListingWrapper = styled.div`
     padding-right: 30px;
 	border-right: 10px solid transparent;
     transition: border .3s;
-    background-color: ${props => (props.index === props.indexToStyle) ? "rgb(191, 191, 199)" : null };
-    /* border-left: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null }; */
-    border-right: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null };
+    background-color: ${props => (props.index === props.indexToStyle) ? "rgb(191, 191, 199)" : null};
+    /* border-left: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null}; */
+    border-right: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null};
     &:hover {
         background-color: #eff5f9;
     }
@@ -200,7 +211,7 @@ const JobListings = styled.div`
 
 const Sidebar = styled.div`
     width: 1150px;
-    padding: 10px;
+    padding: 25px;
     margin-right: 35px;
     border: lightgrey 3px solid;
 `
@@ -308,4 +319,20 @@ const SaveJobButton = styled.div`
 
 const SidebarDescriptionSection = styled.div`
     padding-top: 20px;
+`
+
+const Arrow = styled.div`
+    border-top: ${props => (props.index === props.indexToStyle) ? "20px solid transparent" : null};
+    border-bottom: ${props => (props.index === props.indexToStyle) ? "20px solid transparent" : null};
+    border-left: ${props => (props.index === props.indexToStyle) ? "20px solid orange" : null};
+    margin-right: ${props => (props.index === props.indexToStyle) ? "-20px" : null};
+`
+
+const ArrowContainer = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const OutermostListingWrapper = styled.div`
+    display: flex;
 `
