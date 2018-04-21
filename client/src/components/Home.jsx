@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThreeAds, SocialMediaImages, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv } from './styled-components/LandingStyle'
+import { ThreeAds, SocialMediaImages, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv, TreesImgDiv, EarthshareDescriptionTitle, SocialTitle } from './styled-components/LandingStyle'
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
@@ -42,28 +42,28 @@ const Home = (props) => {
                     </SeekingTextDiv>
                 </SeekingDiv>
             </GreenJobsHeader>
-            <div>
-                <TreesImage src="https://i.imgur.com/SkJPLeT.jpg?2" alt="Green Jobs logo"/>
-            </div>
+            <TreesImgDiv>
+                <TreesImage src="https://i.imgur.com/SkJPLeT.jpg?2" alt="Green Jobs logo" />
+            </TreesImgDiv>
             <EarthShareDiv>
                 <EarthShareInfo>
-                    <hi>
+                    <EarthshareDescriptionTitle>
                         EarthShare
-                </hi>
+                    </EarthshareDescriptionTitle>
                     <p>
                         EarthShare of Georgia connects people to trusted non-profit
-                         organizations dedicated to conserving and protecting our air,
-                         land and water. EarthShare of Georgia raises funds primarily
-                         through workplace-giving partnerships with more than 50 employers
-                         that help support more than 60 environmental and conservation organizations.
-                          Approximately 30 of these organizations are based in Georgia,
-                          the others are national member groups – some of which have offices
-                          or have field representatives in Georgia.
-                </p>
+                        organizations dedicated to conserving and protecting our air,
+                        land and water. EarthShare of Georgia raises funds primarily
+                        through workplace-giving partnerships with more than 50 employers
+                        that help support more than 60 environmental and conservation organizations.
+                        Approximately 30 of these organizations are based in Georgia,
+                        the others are national member groups – some of which have offices
+                        or have field representatives in Georgia.
+                    </p>
                 </EarthShareInfo>
                 <SocialMediaDiv>
                     <div>
-                        <h2>Get Connected:</h2>
+                        <SocialTitle>Get Connected:</SocialTitle>
                     </div>
                     <SocialMediaImages>
                         <SocialImage src="https://i.imgur.com/zTNll8B.png" alt="Twitter logo" />

@@ -46,5 +46,7 @@ export const CompanyShowImage = styled.img`
 
 export const SocialImage = styled.img`
     width: 40px;
+    height: 40px;
+    padding: 0 10px;
 `
 export default { SocialImage, CompanyShowImage, SplashImage, CompanyImage}

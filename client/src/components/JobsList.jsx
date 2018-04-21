@@ -164,7 +164,7 @@ const ListingWrapper = styled.div`
     padding-left: 40px;
     padding-right: 30px;
 	border-right: 10px solid transparent;
-    transition: border .3s;
+    transition: .3s;
     background-color: ${props => (props.index === props.indexToStyle) ? "rgb(191, 191, 199)" : null};
     /* border-left: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null}; */
     border-right: ${props => (props.index === props.indexToStyle) ? "13px solid orange" : null};
@@ -323,6 +323,7 @@ const SidebarDescriptionSection = styled.div`
 `
 
 const Arrow = styled.div`
+    transition: .15s;
     border-top: ${props => (props.index === props.indexToStyle) ? "20px solid transparent" : null};
     border-bottom: ${props => (props.index === props.indexToStyle) ? "20px solid transparent" : null};
     border-left: ${props => (props.index === props.indexToStyle) ? "20px solid orange" : null};

@@ -46,32 +46,49 @@ export const ButtonStyle = styled.button`
     height: 40px;
     margin-bottom: 25px;
     border-radius: 4px;
-   
 `
 
 export const TreesImage = styled.img`
     width: 100vw;
-    height: 30vh;
+    height: 25vh;
+`
+
+export const TreesImgDiv = styled.div`
+    display: flex;
+    justify-content: center; 
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-left: 30px;
 `
 
 export const SocialMediaDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    width: 50%;
+    justify-content: center;
+    width: 30%;
 
+`
+
+export const GetConnectedDiv = styled.div`
+    display: flex;
+    justify-content: flex-start;
 `
 
 export const EarthShareDiv = styled.div`
     display: flex;
+    
 `
+
+export const EarthshareDescriptionTitle = styled.h1`
+    margin-bottom: 0px;
+`
+
 export const EarthShareInfo = styled.div`
     display: flex;
     flex-direction: column;
-    width: 50%;
-    align-items: center;
-
+    width: 65%;
+    padding-left: 50px;
 `
 
 export const CompaniesDiv = styled.div`
@@ -103,7 +120,9 @@ export const Footer = styled.div`
 `
 
 export const SocialMediaImages = styled.div`
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
 `
 
 export const ThreeAds = styled.div`
@@ -113,4 +132,12 @@ export const ThreeAds = styled.div`
     justify-content: center;
 `
 
-export default {  ThreeAds, SocialMediaImages, Footer, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv }
+export const SocialTitle = styled.h2`
+    margin-top: 0px;
+`
+
+export default {  ThreeAds, SocialMediaImages, Footer, Advertisement, LookingToHire, 
+                TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, SocialMediaDiv, 
+                TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, 
+                GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv, TreesImgDiv,
+                GetConnectedDiv }
