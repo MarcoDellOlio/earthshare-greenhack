@@ -55,12 +55,12 @@ class LogInForm extends Component {
             <FormBody onSubmit={this.handleSubmit}>
               <FormField>
                 <FormHeader>
-                  <FormHeading>Log in</FormHeading>
+                  <FormHeading>Log into Eartshare's Green Jobs</FormHeading>
                 </FormHeader>
                 <FormInput
                   type="string"
                   name="email"
-                  placeholder="Insert email"
+                  placeholder="Enter E-mail"
                   onChange={this.handleChange} />
               </FormField>
 
@@ -68,11 +68,11 @@ class LogInForm extends Component {
                 <FormInput
                   type="string"
                   name="password"
-                  placeholder="Insert password"
+                  placeholder="Enter Password"
                   onChange={this.handleChange} />
               </FormField>
               <FormField>
-                <FormButton>Submit</FormButton>
+                <FormButton>Log In</FormButton>
               </FormField>
             </FormBody>
           </FormWrapper>}
