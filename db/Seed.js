@@ -24,7 +24,7 @@ const Post = require('./models/PostModel')
       email: "company1@company1.com",
       password: "abcdef",
       isEmployer: true,
-      organization : "company1",
+      organization : "Sierra Club",
       industry : ["finance"],
       firstName : "Jon",
       lastName : "Rubin",
@@ -43,12 +43,12 @@ const Post = require('./models/PostModel')
       email: "company2@company2.com",
       password: "abcdef",
       isEmployer: true,
-      organization : "company2",
+      organization : "Chattahoochee Riverkeeper",
       industry : ["agricolture"],
       firstName : "Sam",
-      lastName : "Sam",
+      lastName : "Wilson",
       phoneNumber : "1234567890",
-      website : "www.company2.com",
+      website : "https://chattahoochee.org/",
       picture : "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg",
       city : "Atlanta",
       streetAddress: "123 Potato road",
@@ -62,12 +62,12 @@ const Post = require('./models/PostModel')
       email: "company3@company3.com",
       password: "abcdef",
       isEmployer: true,
-      organization : "company3",
+      organization : "Trees Atlanta",
       industry : ["healthcare"],
-      firstName : "Marco",
-      lastName : "Dell'Olio",
+      firstName : "Alex",
+      lastName : "Beasley",
       phoneNumber : "1234567890",
-      website : "www.company3.com",
+      website : "https://treesatlanta.org/",
       picture : "https://treesatlanta.org/wp-content/gallery/who-we-are/i-gr4zv6c-xl.jpg",
       city : "Atlanta",
       streetAddress: "123 Smart street",
@@ -81,7 +81,7 @@ const Post = require('./models/PostModel')
       email: "company4@company4.com",
       password: "abcdef",
       isEmployer: true,
-      organization : "company4",
+      organization : "Solarosis",
       industry : ["noprofit"],
       firstName : "Marco",
       lastName : "Dell'Olio",
@@ -92,6 +92,120 @@ const Post = require('./models/PostModel')
       streetAddress: "123 Smart street",
       zipCode : "30306",
       causes : ["disability, mobility"],
+      jobs : [],
+      posts : []
+    })
+
+    const Company5 = new User({
+      email: "company1@company1.com",
+      password: "abcdef",
+      isEmployer: true,
+      organization : "Chattahoochee Nature Center",
+      industry : ["finance"],
+      firstName : "Jon",
+      lastName : "Rubin",
+      phoneNumber : "1234567890",
+      website : "www.company1.com",
+      picture : "https://inhabitat.com/wp-content/blogs.dir/1/files/2018/02/HoKhueArchitectsModernVillageOffice-889x592.jpg",
+      streetAddress: "123 Stupid road",
+      city : "Atlanta",
+      zipCode : "30306",
+      causes : ["recycling", "wildlife", "civic"],
+      jobs : [],
+      posts : []
+    })
+
+    const Company6 = new User({
+      email: "company1@company1.com",
+      password: "abcdef",
+      isEmployer: true,
+      organization : "Elachee Nature Science Center",
+      industry : ["finance"],
+      firstName : "Jon",
+      lastName : "Rubin",
+      phoneNumber : "1234567890",
+      website : "www.company1.com",
+      picture : "https://inhabitat.com/wp-content/blogs.dir/1/files/2018/02/HoKhueArchitectsModernVillageOffice-889x592.jpg",
+      streetAddress: "123 Stupid road",
+      city : "Atlanta",
+      zipCode : "30306",
+      causes : ["recycling", "wildlife", "civic"],
+      jobs : [],
+      posts : []
+    })
+
+    const Company7 = new User({
+      email: "company4@company4.com",
+      password: "abcdef",
+      isEmployer: true,
+      organization : "Save the Whales",
+      industry : ["noprofit"],
+      firstName : "Marco",
+      lastName : "Dell'Olio",
+      phoneNumber : "1234567890",
+      website : "www.company4.com",
+      picture : "https://picsum.photos/200/300/?random",
+      city : "Atlanta",
+      streetAddress: "123 Smart street",
+      zipCode : "30306",
+      causes : ["disability, mobility"],
+      jobs : [],
+      posts : []
+    })
+
+    const Company8 = new User({
+      email: "company4@company4.com",
+      password: "abcdef",
+      isEmployer: true,
+      organization : "Save the Green Chile",
+      industry : ["noprofit"],
+      firstName : "Marco",
+      lastName : "Dell'Olio",
+      phoneNumber : "1234567890",
+      website : "www.company4.com",
+      picture : "https://picsum.photos/200/300/?random",
+      city : "Atlanta",
+      streetAddress: "123 Smart street",
+      zipCode : "30306",
+      causes : ["disability, mobility"],
+      jobs : [],
+      posts : []
+    })
+
+    const Company9 = new User({
+      email: "company4@company4.com",
+      password: "abcdef",
+      isEmployer: true,
+      organization : "Green Tea Store",
+      industry : ["noprofit"],
+      firstName : "Marco",
+      lastName : "Dell'Olio",
+      phoneNumber : "1234567890",
+      website : "www.company4.com",
+      picture : "https://www.placecage.com/g/200/300",
+      city : "Atlanta",
+      streetAddress: "123 Smart street",
+      zipCode : "30306",
+      causes : ["disability, mobility"],
+      jobs : [],
+      posts : []
+    })
+
+    const Company10 = new User({
+      email: "company1@company1.com",
+      password: "abcdef",
+      isEmployer: true,
+      organization : "River Watchers Fund",
+      industry : ["finance"],
+      firstName : "Jon",
+      lastName : "Rubin",
+      phoneNumber : "1234567890",
+      website : "www.company1.com",
+      picture : "https://www.placecage.com/200/300",
+      streetAddress: "123 Stupid road",
+      city : "Atlanta",
+      zipCode : "30306",
+      causes : ["recycling", "wildlife", "civic"],
       jobs : [],
       posts : []
     })
@@ -195,6 +309,13 @@ mongoose.connect(process.env.MONGODB_URI)
 .then(() => {return Company1.save();})
 .then(() => {return Company2.save();})
 .then(() => {return Company3.save();})
+.then(() => {return Company4.save();})
+.then(() => {return Company5.save();})
+.then(() => {return Company6.save();})
+.then(() => {return Company7.save();})
+.then(() => {return Company8.save();})
+.then(() => {return Company9.save();})
+.then(() => {return Company10.save();})
 .then(() => {return marco.save();})
 .then(() => { mongoose.connection.close()})
 .then(() => {console.log('db seeded')})
