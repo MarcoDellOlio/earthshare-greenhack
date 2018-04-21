@@ -323,7 +323,6 @@ const SidebarDescriptionSection = styled.div`
 `
 
 const Arrow = styled.div`
-    transition: .15s;
     border-top: ${props => (props.index === props.indexToStyle) ? "20px solid transparent" : null};
     border-bottom: ${props => (props.index === props.indexToStyle) ? "20px solid transparent" : null};
     border-left: ${props => (props.index === props.indexToStyle) ? "20px solid orange" : null};

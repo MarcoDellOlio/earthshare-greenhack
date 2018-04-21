@@ -1,9 +1,11 @@
 import React from 'react'
-import { ThreeAds, SocialMediaImages, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, SocialMediaDiv, TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv, TreesImgDiv, EarthshareDescriptionTitle, SocialTitle } from './styled-components/LandingStyle'
+import { ThreeAds, SocialMediaImages, Advertisement, LookingToHire, TestimonialsDiv, CompaniesDiv, EarthShareInfo, EarthShareDiv, SocialMediaDiv, 
+    TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, HiringBlurb, SeekingBlurb, GreenJobsParagraph, GreenJobsHeader, SeekingDiv, 
+    HiringDiv, TreesImgDiv, EarthshareDescriptionTitle, SocialTitle, HomeCompanyWrapper, HomeCompanyName } from './styled-components/LandingStyle'
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
-import { SocialImage } from './styled-components/Images'
+import { SocialImage, HomeCompanyItemImg } from './styled-components/Images'
 const Home = (props) => {
 
     return (
@@ -74,6 +76,16 @@ const Home = (props) => {
                 </SocialMediaDiv>
             </EarthShareDiv>
             <CompaniesDiv>
+                {
+                    props.companies.map((company, index) => {
+                        if (company) {
+                            return <HomeCompanyWrapper key={index}>
+                                <HomeCompanyItemImg src={company.picture}></HomeCompanyItemImg>
+                                <HomeCompanyName>{company.organization}</HomeCompanyName>
+                            </HomeCompanyWrapper>
+                        }
+                    })
+                }
             </CompaniesDiv>
             <TestimonialsDiv>
                 CAROUSEL HERE

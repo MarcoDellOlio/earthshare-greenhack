@@ -92,9 +92,11 @@ export const EarthShareInfo = styled.div`
 `
 
 export const CompaniesDiv = styled.div`
-    height: 40vh;
+    height: 522px;
     background-color: #63a0c8;
-
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
 `
 
 export const TestimonialsDiv = styled.div`
@@ -134,6 +136,14 @@ export const ThreeAds = styled.div`
 
 export const SocialTitle = styled.h2`
     margin-top: 0px;
+`
+
+export const HomeCompanyWrapper = styled.div`
+    margin: 20px;
+`
+
+export const HomeCompanyName = styled.div`
+    text-align: center;
 `
 
 export default {  ThreeAds, SocialMediaImages, Footer, Advertisement, LookingToHire, 

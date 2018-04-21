@@ -49,4 +49,12 @@ export const SocialImage = styled.img`
     height: 40px;
     padding: 0 10px;
 `
+
+export const HomeCompanyItemImg = styled.img`
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border: lightgrey 10px solid;
+`
+
 export default { SocialImage, CompanyShowImage, SplashImage, CompanyImage}

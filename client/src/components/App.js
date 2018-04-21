@@ -17,7 +17,7 @@ class App extends Component {
 
   componentWillMount() {
     // this.getUsers()
-    // this.getCompanies()
+    this.getCompanies()
   }
   //(GET) All users
   async getUsers() {
@@ -98,6 +98,7 @@ class App extends Component {
 
   render() {
     const JobsListComponent = (props) => (<JobsList addNewUser={this.addNewUser}{...props}/>)
+    const HomeComponent = (props) => (<Home companies={this.state.companies}{...props}/>)
     const CompanyFormComponent = (props) => (<CompanyForm addNewCompany={this.addNewCompany}/>)
     const JobSeekerFormComponent = (props) => (<JobSeekerForm addNewUser={this.addNewUser}/>)
     const CompaniesListComponent = (props) => (<CompaniesList companies = {this.state.companies}/>)
@@ -105,7 +106,7 @@ class App extends Component {
     return (
       <Router>
       <Switch>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={HomeComponent}/>
         <Route exact path="/login" component={LogInForm} />
         <Route exact path="/jobs" component={JobsListComponent}/>
         <Route exact path="/companies" component={CompaniesListComponent}/>
