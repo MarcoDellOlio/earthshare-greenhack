@@ -95,7 +95,6 @@ export const CompaniesDiv = styled.div`
     height: 522px;
     background-color: #63a0c8;
     display: flex;
-    flex-wrap: wrap;
     padding: 40px;
 `
 
@@ -139,15 +138,33 @@ export const SocialTitle = styled.h2`
 `
 
 export const HomeCompanyWrapper = styled.div`
-    margin: 20px;
+    margin: 0 20px;
 `
 
 export const HomeCompanyName = styled.div`
     text-align: center;
 `
 
+export const FeaturedCompanyWrapper = styled.div`
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const FeaturedCompanyName = styled.div`
+
+`
+
+export const CompanyList = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+`
+
 export default {  ThreeAds, SocialMediaImages, Footer, Advertisement, LookingToHire, 
                 TestimonialsDiv, CompaniesDiv, EarthShareDiv, EarthShareInfo, SocialMediaDiv, 
                 TreesImage, ButtonStyle, SeekingTextDiv, HiringTextDiv, SeekingBlurb, HiringBlurb, 
                 GreenJobsParagraph, GreenJobsHeader, SeekingDiv, HiringDiv, TreesImgDiv,
-                GetConnectedDiv }
+                GetConnectedDiv, FeaturedCompanyWrapper }

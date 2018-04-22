@@ -55,6 +55,15 @@ export const HomeCompanyItemImg = styled.img`
     height: 170px;
     object-fit: cover;
     border: lightgrey 10px solid;
+    border-radius: 5px;
 `
 
-export default { SocialImage, CompanyShowImage, SplashImage, CompanyImage}
+export const FeaturedCompanyImg = styled.img`
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+    border: lightgrey 10px solid;
+    border-radius: 5px;
+`
+
+export default { SocialImage, CompanyShowImage, SplashImage, CompanyImage, FeaturedCompanyImg}
