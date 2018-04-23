@@ -5,12 +5,14 @@ export const HiringDiv = styled.div`
     flex-direction: column;
     align-items: flex-end;
     background-color: #57a619;
+    color: white;
 `
 export const SeekingDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: #63a0c8;
+    color: white;
 `
 
 export const GreenJobsHeader = styled.div`
@@ -142,7 +144,7 @@ export const HomeCompanyWrapper = styled.div`
 `
 
 export const HomeCompanyName = styled.div`
-    text-align: center;
+    text-align: left;
 `
 
 export const FeaturedCompanyWrapper = styled.div`
@@ -154,13 +156,16 @@ export const FeaturedCompanyWrapper = styled.div`
 `
 
 export const FeaturedCompanyName = styled.div`
-
+    color: white;
+    text-align: left;
 `
 
 export const CompanyList = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    color: white;
+    justify-content: space-around;
 `
 
 export default {  ThreeAds, SocialMediaImages, Footer, Advertisement, LookingToHire, 

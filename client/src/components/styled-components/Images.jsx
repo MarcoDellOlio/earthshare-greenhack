@@ -27,7 +27,6 @@ export const CompanyImage = styled.img`
     @media only screen and (max-width: 787px){
         width: 100%;
         height: auto;
-    
     }
 `
 
@@ -51,18 +50,18 @@ export const SocialImage = styled.img`
 `
 
 export const HomeCompanyItemImg = styled.img`
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
     object-fit: cover;
-    border: lightgrey 10px solid;
+    /* border: lightgrey 10px solid; */
     border-radius: 5px;
 `
 
 export const FeaturedCompanyImg = styled.img`
-    width: 360px;
-    height: 360px;
+    width: 380px;
+    height: 380px;
     object-fit: cover;
-    border: lightgrey 10px solid;
+    /* border: lightgrey 10px solid; */
     border-radius: 5px;
 `
 
