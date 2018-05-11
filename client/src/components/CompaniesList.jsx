@@ -12,25 +12,25 @@ const CompaniesList = (props) => {
         return (
             <div>
 
-                <CompaniesIndex 
-                picture={company.picture}
-                                id={company._id}
-                                />
+                <CompaniesIndex
+                // picture={company.picture}
+                //                 id={company._id}
+                />
             </div>
         )
     })
 
     return (
         <div>
-             <SplashImageContainer>
+            <SplashImageContainer>
                 <SplashImage src="https://i.imgur.com/CMSTGj4.jpg?1" />
                 <SplashHeaderContainer>Organizations</SplashHeaderContainer>
             </SplashImageContainer>
             <CompanyIndexContainer>
-                        {companiesList}
+                {/* {companiesList} */}
             </CompanyIndexContainer>
         </div>
-     
+
     )
 }
 
