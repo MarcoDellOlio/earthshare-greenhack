@@ -5,6 +5,7 @@ import {
     HiringDiv, TreesImgDiv, EarthshareDescriptionTitle, SocialTitle, HomeCompanyWrapper, HomeCompanyName, FeaturedCompanyWrapper, FeaturedCompanyName,
     CompanyList,
 } from './styled-components/LandingStyle'
+import styled from 'styled-components'
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
@@ -124,15 +125,15 @@ class Home extends Component {
                 <Advertisement>
                     <ThreeAds>
                         <h2>Get Notified</h2>
-                        <p>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</p>
+                        <AdsBlurb>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</AdsBlurb>
                     </ThreeAds>
                     <ThreeAds>
                         <h2>Read the Blog</h2>
-                        <p>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</p>
+                        <AdsBlurb>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</AdsBlurb>
                     </ThreeAds>
                     <ThreeAds>
                         <h2>Job Coaching</h2>
-                        <p>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</p>
+                        <AdsBlurb>Four loko tofu dolore health goth lorem marfa, veniam lo-fi excepteur wayfarers labore. Celiac copper mug tofu air.</AdsBlurb>
                     </ThreeAds>
                 </Advertisement>
                 <Footer />
@@ -145,3 +146,7 @@ class Home extends Component {
 
 
 export default Home
+
+const AdsBlurb = styled.div`
+    text-align: center;
+`

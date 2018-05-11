@@ -114,6 +114,7 @@ export const LookingToHire = styled.div`
 export const Advertisement = styled.div`
     height: 45vh;
     display: flex;
+    justify-content: space-around;
 `
 
 export const Footer = styled.div`
@@ -133,6 +134,7 @@ export const ThreeAds = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 30%;
 `
 
 export const SocialTitle = styled.h2`
